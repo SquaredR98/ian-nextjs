@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
 const API_BASE = process.env.NEXT_PUBLIC_API_URL?.replace(/\/api\/v1$/, '') || "http://localhost:5550";
 
 const nextConfig: NextConfig = {
@@ -21,14 +22,15 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    dangerouslyAllowLocalIP: true,
+    ...(isProd ? {} : { dangerouslyAllowLocalIP: true }),
     remotePatterns: [
-      {
-        protocol: "http",
+      // Localhost only needed in dev — harmless in prod (won't match remote requests)
+      ...(!isProd ? [{
+        protocol: "http" as const,
         hostname: "localhost",
         port: "5550",
         pathname: "/uploads/**",
-      },
+      }] : []),
       {
         protocol: "https",
         hostname: "api.injuryassistancenetwork.com",
