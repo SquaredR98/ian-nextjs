@@ -1,0 +1,24 @@
+@reference "tailwindcss";
+.testimonial-card {
+  @apply p-6 rounded-lg border border-[var(--color-ian-border)] bg-white;
+}
+
+.testimonial-card-header {
+  @apply flex items-center gap-4 mb-4;
+}
+
+.testimonial-card-photo {
+  @apply w-16 h-16 rounded-full object-cover shrink-0;
+}
+
+.testimonial-card-meta {
+  @apply flex flex-col gap-1;
+}
+
+.testimonial-card-name {
+  @apply text-sm font-semibold text-[var(--color-ian-text)];
+}
+
+.testimonial-card-quote {
+  @apply text-sm text-[var(--color-ian-muted)] leading-relaxed italic;
+}

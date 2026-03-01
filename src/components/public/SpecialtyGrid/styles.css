@@ -1,0 +1,39 @@
+@reference "tailwindcss";
+
+.popular-specialties {
+  @apply py-10 px-4 flex flex-col lg:flex-row items-start lg:items-center gap-8;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.popular-specialties-title {
+  @apply flex flex-col shrink-0;
+}
+
+.popular-specialties-label {
+  @apply text-sm text-(--color-ian-muted) italic;
+}
+
+.popular-specialties-heading {
+  @apply text-3xl font-bold text-(--color-ian-text);
+}
+
+.popular-specialties-row {
+  @apply flex-1 flex flex-wrap lg:flex-nowrap items-start justify-between gap-6;
+}
+
+.popular-specialty-item {
+  @apply flex flex-col items-center gap-3 no-underline transition-opacity;
+}
+
+.popular-specialty-item:hover {
+  @apply opacity-75;
+}
+
+.popular-specialty-icon {
+  @apply w-20 h-20 object-contain;
+}
+
+.popular-specialty-name {
+  @apply text-sm text-(--color-ian-text) text-center whitespace-nowrap;
+}

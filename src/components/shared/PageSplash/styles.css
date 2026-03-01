@@ -1,0 +1,102 @@
+@reference "tailwindcss";
+
+/* ---- Full-screen splash overlay ---- */
+
+.page-splash {
+	@apply fixed inset-0 z-9999 flex items-center justify-center;
+	background: #ffffff;
+	transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-splash-exit {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.page-splash-content {
+	@apply relative flex flex-col items-center gap-8;
+}
+
+/* ---- Pulsing glow rings ---- */
+
+.page-splash-ring {
+	@apply absolute rounded-full;
+	border: 2px solid rgba(30, 25, 92, 0.06);
+	animation: splashRingPulse 2s ease-in-out infinite;
+}
+
+.page-splash-ring-1 {
+	width: 280px;
+	height: 280px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	animation-delay: 0s;
+}
+
+.page-splash-ring-2 {
+	width: 360px;
+	height: 360px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -56%);
+	animation-delay: 0.5s;
+}
+
+@keyframes splashRingPulse {
+	0%, 100% {
+		opacity: 0.3;
+		border-color: rgba(30, 25, 92, 0.05);
+	}
+	50% {
+		opacity: 0.8;
+		border-color: rgba(56, 13, 157, 0.15);
+	}
+}
+
+/* ---- Logo ---- */
+
+.page-splash-logo {
+	@apply relative;
+	animation: splashLogoEntry 0.6s ease-out both;
+}
+
+.page-splash-logo img {
+	@apply w-48 md:w-64 h-auto;
+	filter: drop-shadow(0 4px 16px rgba(30, 25, 92, 0.15));
+}
+
+@keyframes splashLogoEntry {
+	from {
+		opacity: 0;
+		transform: scale(0.85) translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* ---- Loading bar ---- */
+
+.page-splash-bar {
+	@apply w-48 md:w-56 h-1 rounded-full overflow-hidden;
+	background: rgba(30, 25, 92, 0.08);
+}
+
+.page-splash-bar-fill {
+	@apply h-full rounded-full;
+	background: linear-gradient(90deg, var(--color-ian-dark), var(--color-ian-btn-cta-alt), var(--color-ian-dark));
+	background-size: 200% 100%;
+	animation: splashBarFill 1.2s ease-out both, splashBarShimmer 1.5s linear infinite;
+}
+
+@keyframes splashBarFill {
+	from { width: 0; }
+	to { width: 100%; }
+}
+
+@keyframes splashBarShimmer {
+	0% { background-position: 200% 0; }
+	100% { background-position: -200% 0; }
+}

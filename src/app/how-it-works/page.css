@@ -1,0 +1,45 @@
+@reference "tailwindcss";
+
+.how-it-works-page {
+  @apply max-w-3xl mx-auto px-4 py-12;
+}
+
+.how-it-works-title {
+  @apply text-3xl md:text-4xl font-bold text-center text-[var(--color-ian-text)] mb-4;
+}
+
+.how-it-works-subtitle {
+  @apply text-base text-center text-[var(--color-ian-muted)] mb-12 max-w-xl mx-auto;
+}
+
+.how-it-works-steps {
+  @apply space-y-0 relative list-none p-0 m-0;
+}
+
+/* Vertical connecting line */
+.how-it-works-steps::before {
+  content: "";
+  @apply absolute left-[27px] top-[40px] bottom-[40px] w-[2px];
+  background: var(--color-ian-border);
+}
+
+.how-it-works-step {
+  @apply flex items-start gap-5 relative;
+}
+
+.how-it-works-number {
+  @apply shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold text-white z-10;
+  background: linear-gradient(135deg, var(--color-ian-dark), var(--color-ian-primary));
+}
+
+.how-it-works-step-content {
+  @apply py-4;
+}
+
+.how-it-works-step-title {
+  @apply text-lg font-semibold text-[var(--color-ian-text)] mb-1;
+}
+
+.how-it-works-step-desc {
+  @apply text-sm text-[var(--color-ian-muted)] leading-relaxed;
+}

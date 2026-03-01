@@ -1,0 +1,66 @@
+@reference "tailwindcss";
+
+.hiw-strip {
+  @apply py-20 px-4;
+  background: linear-gradient(135deg, var(--color-ian-dark) 0%, #380d9d 100%);
+}
+
+.hiw-strip-inner {
+  @apply max-w-5xl mx-auto text-center;
+}
+
+.hiw-strip-header {
+  @apply mb-12;
+}
+
+.hiw-strip-label {
+  @apply text-sm font-bold uppercase tracking-widest text-white/60;
+}
+
+.hiw-strip-title {
+  @apply text-2xl md:text-3xl font-bold text-white mt-3;
+}
+
+.hiw-strip-steps {
+  @apply flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0 mb-10;
+}
+
+.hiw-strip-step {
+  @apply relative flex flex-col items-center text-center flex-1 px-4;
+}
+
+.hiw-strip-number {
+  @apply w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold mb-4 transition-transform duration-300;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hiw-strip-step:hover .hiw-strip-number {
+  @apply scale-110;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hiw-strip-step-title {
+  @apply text-lg font-bold text-white mb-2;
+}
+
+.hiw-strip-step-desc {
+  @apply text-sm text-white/70 leading-relaxed max-w-[220px];
+}
+
+/* Connector arrow between steps (desktop only) */
+.hiw-strip-connector {
+  @apply hidden md:block absolute top-7 w-full h-px;
+  left: 60%;
+  width: 80%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+}
+
+.hiw-strip-link {
+  @apply inline-flex items-center gap-2 text-sm font-semibold text-white/80 no-underline transition-colors duration-200;
+}
+
+.hiw-strip-link:hover {
+  @apply text-white;
+}

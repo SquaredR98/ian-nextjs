@@ -1,0 +1,117 @@
+@reference "tailwindcss";
+
+/* ── Hero ──────────────────────────────────────────────────────────── */
+
+.faq-hero {
+  @apply py-14 px-4 text-center;
+  background: linear-gradient(135deg, var(--color-ian-dark) 0%, var(--color-ian-btn-cta-alt) 100%);
+}
+
+.faq-hero-inner {
+  @apply max-w-2xl mx-auto;
+}
+
+.faq-hero-label {
+  @apply inline-block text-xs font-bold uppercase tracking-widest mb-3 px-3 py-1 rounded-full;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-ian-accent);
+}
+
+.faq-hero-title {
+  @apply text-3xl md:text-4xl font-bold text-white mb-3;
+}
+
+.faq-hero-subtitle {
+  @apply text-base md:text-lg leading-relaxed;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Page Container ────────────────────────────────────────────────── */
+
+.faq-page {
+  @apply px-4 py-12;
+  background-color: var(--color-ian-bg-light);
+}
+
+.faq-page-inner {
+  @apply max-w-3xl mx-auto;
+}
+
+/* ── Accordion Items ───────────────────────────────────────────────── */
+
+.faq-accordion [data-slot="accordion-item"] {
+  @apply border rounded-lg mb-3 bg-white overflow-hidden;
+  border-color: var(--color-ian-border);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-accordion [data-slot="accordion-item"]:hover {
+  border-color: #c5cad0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.faq-accordion [data-slot="accordion-item"]:has([data-state="open"]) {
+  border-color: var(--color-ian-btn-cta-alt);
+  box-shadow: 0 2px 12px rgba(56, 13, 157, 0.1);
+}
+
+/* ── Trigger ───────────────────────────────────────────────────────── */
+
+.faq-accordion [data-slot="accordion-trigger"] {
+  @apply px-5 py-4 text-base font-semibold;
+  color: var(--color-ian-dark);
+}
+
+.faq-accordion [data-slot="accordion-trigger"]:hover {
+  text-decoration: none;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.faq-accordion [data-slot="accordion-trigger"] svg {
+  @apply size-5;
+  color: var(--color-ian-muted);
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.faq-accordion [data-slot="accordion-item"]:has([data-state="open"]) [data-slot="accordion-trigger"] svg {
+  color: var(--color-ian-btn-cta-alt);
+}
+
+/* ── Content ───────────────────────────────────────────────────────── */
+
+.faq-accordion [data-slot="accordion-content"] {
+  @apply text-sm leading-relaxed;
+  color: var(--color-ian-muted);
+}
+
+.faq-accordion [data-slot="accordion-content"] > div {
+  @apply px-5 pt-0 pb-5;
+  border-top: 1px solid var(--color-ian-border);
+  margin: 0 1rem;
+  padding-top: 1rem;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .faq-hero {
+    @apply py-10;
+  }
+
+  .faq-hero-title {
+    @apply text-2xl;
+  }
+
+  .faq-hero-subtitle {
+    @apply text-sm;
+  }
+
+  .faq-accordion [data-slot="accordion-trigger"] {
+    @apply px-4 py-3 text-sm;
+  }
+
+  .faq-accordion [data-slot="accordion-content"] > div {
+    @apply px-4;
+    margin: 0 0.75rem;
+  }
+}

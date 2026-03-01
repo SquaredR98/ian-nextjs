@@ -1,0 +1,70 @@
+@reference "tailwindcss";
+
+.endorsement-card {
+  @apply flex flex-col gap-5 p-5 sm:p-6 rounded-xl border bg-white;
+  border-color: var(--color-ian-border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.endorsement-card:hover {
+  border-color: #c5cad0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Top row: photo + info side by side */
+.endorsement-card-header {
+  @apply flex flex-col sm:flex-row items-start gap-4;
+}
+
+.endorsement-card-photo {
+  @apply w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover shrink-0;
+  border: 2px solid var(--color-ian-border);
+}
+
+.endorsement-card-info {
+  @apply flex flex-col gap-1.5 min-w-0 flex-1;
+}
+
+.endorsement-card-name {
+  @apply text-lg font-bold;
+  color: var(--color-ian-dark);
+}
+
+.endorsement-card-firm {
+  @apply text-sm font-medium;
+  color: var(--color-ian-muted);
+}
+
+.endorsement-card-list {
+  @apply text-sm leading-relaxed;
+}
+
+.endorsement-card-list-label {
+  @apply font-semibold;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.endorsement-card-list-value {
+  @apply ml-1;
+  color: var(--color-ian-text);
+}
+
+.endorsement-card-link {
+  @apply inline-flex items-center gap-1 text-sm font-semibold no-underline mt-1 transition-colors;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.endorsement-card-link:hover {
+  color: var(--color-ian-dark);
+}
+
+/* Video section — full width below the header */
+.endorsement-card-video {
+  @apply w-full aspect-video rounded-lg overflow-hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.endorsement-card-iframe {
+  @apply w-full h-full border-none;
+}

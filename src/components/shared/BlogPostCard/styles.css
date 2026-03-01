@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+.blog-card {
+  @apply rounded-lg border border-[var(--color-ian-border)] bg-white overflow-hidden hover:shadow-md transition-shadow;
+}
+
+.blog-card-image-wrap {
+  @apply block w-full aspect-[16/10] overflow-hidden bg-gray-100;
+}
+
+.blog-card-image {
+  @apply w-full h-full object-cover;
+}
+
+.blog-card-body {
+  @apply p-4 flex flex-col gap-2;
+}
+
+.blog-card-categories {
+  @apply flex flex-wrap gap-1;
+}
+
+.blog-card-title {
+  @apply text-base font-semibold text-[var(--color-ian-text)] leading-snug;
+}
+
+.blog-card-title a {
+  @apply no-underline text-inherit hover:text-[var(--color-ian-primary)];
+}
+
+.blog-card-excerpt {
+  @apply text-sm text-[var(--color-ian-muted)] line-clamp-3;
+}
+
+.blog-card-link {
+  @apply text-sm font-medium text-[var(--color-ian-primary)] no-underline hover:underline mt-1;
+}

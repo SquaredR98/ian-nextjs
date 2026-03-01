@@ -1,0 +1,26 @@
+@reference "tailwindcss";
+
+.under-construction-page {
+  @apply flex items-center justify-center min-h-[60vh] px-4;
+}
+
+.under-construction-content {
+  @apply text-center max-w-md;
+}
+
+.under-construction-title {
+  @apply text-3xl font-bold text-[var(--color-ian-text)] mb-4;
+}
+
+.under-construction-text {
+  @apply text-base text-[var(--color-ian-muted)] mb-8;
+}
+
+.under-construction-btn {
+  @apply inline-flex items-center px-6 py-3 text-sm font-semibold text-white rounded-lg no-underline transition-all duration-200;
+  background: var(--color-ian-dark);
+}
+
+.under-construction-btn:hover {
+  background: var(--color-ian-dark-hover);
+}

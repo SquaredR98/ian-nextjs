@@ -1,0 +1,8 @@
+@reference "tailwindcss";
+.public-layout {
+  @apply min-h-screen flex flex-col;
+}
+
+.public-main {
+  @apply flex-1;
+}

@@ -1,0 +1,89 @@
+@reference "tailwindcss";
+
+.contact-page {
+  @apply max-w-7xl mx-auto px-4 py-12;
+}
+
+.contact-layout {
+  @apply grid grid-cols-1 lg:grid-cols-[3fr_9fr] gap-12;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Left column                                                        */
+/* ------------------------------------------------------------------ */
+
+.contact-left {
+  @apply flex flex-col;
+}
+
+.contact-label {
+  @apply text-base font-semibold text-[var(--color-ian-dark)] mb-2;
+}
+
+.contact-heading {
+  @apply text-2xl font-bold text-[var(--color-ian-text)] mb-3;
+}
+
+.contact-description {
+  @apply text-base text-[var(--color-ian-muted)] mb-6 pb-6 border-b border-[var(--color-ian-border)];
+}
+
+/* ------------------------------------------------------------------ */
+/*  Right column                                                       */
+/* ------------------------------------------------------------------ */
+
+.contact-right {
+  @apply flex flex-col gap-8;
+}
+
+.contact-provider-cta {
+  @apply p-0;
+}
+
+.contact-provider-cta-title {
+  @apply text-xl font-bold text-[var(--color-ian-text)] mb-6;
+}
+
+.contact-provider-cards {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.contact-provider-card {
+  @apply flex flex-col gap-4;
+}
+
+.contact-provider-card-text {
+  @apply text-base text-[var(--color-ian-muted)] leading-relaxed;
+}
+
+.contact-provider-card-btn {
+  @apply inline-flex items-center justify-center w-fit px-8 py-2.5 rounded-full bg-[var(--color-ian-dark)] text-white text-sm font-semibold tracking-wider hover:bg-[var(--color-ian-dark-hover)] transition-colors;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Ways to connect                                                    */
+/* ------------------------------------------------------------------ */
+
+.contact-ways {
+  @apply bg-[var(--color-ian-bg-light)] rounded-lg p-8;
+}
+
+.contact-ways-title {
+  @apply text-lg font-bold text-[var(--color-ian-text)] mb-5;
+}
+
+.contact-ways-list {
+  @apply flex flex-col gap-5;
+}
+
+.contact-ways-item {
+  @apply flex items-center gap-3 text-base text-[var(--color-ian-text)];
+}
+
+.contact-ways-icon {
+  @apply w-5 h-5 text-[var(--color-ian-dark)] shrink-0;
+}
+
+.contact-ways-link {
+  @apply text-[var(--color-ian-text)] hover:text-[var(--color-ian-dark)] transition-colors;
+}

@@ -1,0 +1,80 @@
+@reference "tailwindcss";
+
+.appointment-form {
+  @apply p-6 rounded-lg border border-[var(--color-ian-border)] bg-white;
+}
+
+.appointment-form-title {
+  @apply text-base font-bold uppercase tracking-wide text-[var(--color-ian-text)] mb-6 text-left;
+}
+
+.appointment-form-biz-name {
+  @apply block text-[var(--color-ian-accent)] text-lg mt-2 font-bold uppercase tracking-widest;
+  font-family: "Montserrat", sans-serif;
+}
+
+.appointment-form-fields {
+  @apply flex flex-col gap-4;
+}
+
+.appointment-form-field {
+  @apply flex flex-col gap-1;
+}
+
+.appointment-form-label {
+  @apply text-sm font-medium text-[var(--color-ian-text)];
+}
+
+.appointment-form-input {
+  @apply w-full px-3 py-2 text-sm rounded border border-[var(--color-ian-border)] text-[var(--color-ian-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-ian-primary)];
+}
+
+.appointment-form-error {
+  @apply text-xs text-[var(--color-ian-danger)];
+}
+
+.appointment-form-submit {
+  @apply mt-4 w-full py-2.5 text-sm font-medium rounded bg-[var(--color-ian-primary)] text-white hover:bg-blue-700 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.appointment-form-success {
+  @apply mt-3 text-sm text-[var(--color-ian-success)] text-center;
+}
+
+.appointment-form-error-msg {
+  @apply mt-3 text-sm text-[var(--color-ian-danger)] text-center;
+}
+
+/* ---- Dark purple variant (provider detail sidebar) ---- */
+
+.provider-appointment-sidebar.appointment-form {
+  @apply bg-[var(--color-ian-dark-alt)] border-none text-white;
+}
+
+.provider-appointment-sidebar .appointment-form-title {
+  @apply text-white;
+}
+
+.provider-appointment-sidebar .appointment-form-label {
+  @apply text-white/90 text-sm font-medium;
+}
+
+.provider-appointment-sidebar .appointment-form-input {
+  @apply bg-white/15 border-none text-white placeholder:text-white/50;
+}
+
+.provider-appointment-sidebar .appointment-form-submit {
+  @apply bg-[var(--color-ian-primary)] text-white hover:bg-blue-700 font-medium;
+}
+
+.provider-appointment-sidebar .appointment-form-error {
+  @apply text-red-300;
+}
+
+.provider-appointment-sidebar .appointment-form-success {
+  @apply text-green-300;
+}
+
+.provider-appointment-sidebar .appointment-form-error-msg {
+  @apply text-red-300;
+}

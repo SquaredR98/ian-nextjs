@@ -1,0 +1,135 @@
+@reference "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Hero slider container                                              */
+/* ------------------------------------------------------------------ */
+
+.blog-hero-slider {
+  @apply relative w-full overflow-hidden;
+  height: 420px;
+}
+
+@media (max-width: 640px) {
+  .blog-hero-slider {
+    height: 360px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Individual slide                                                   */
+/* ------------------------------------------------------------------ */
+
+.blog-hero-slide {
+  @apply absolute inset-0;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  pointer-events: none;
+}
+
+.blog-hero-slide-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Background image */
+.blog-hero-slide-bg {
+  @apply absolute inset-0;
+}
+
+.blog-hero-slide-img {
+  @apply w-full h-full object-cover;
+}
+
+/* Gradient overlay: dark from left for text readability */
+.blog-hero-slide-overlay {
+  @apply absolute inset-0;
+  background: linear-gradient(
+    to right,
+    rgba(30, 25, 92, 0.92) 0%,
+    rgba(30, 25, 92, 0.7) 40%,
+    rgba(30, 25, 92, 0.3) 70%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+/* Content: left-aligned within the site max-width container */
+.blog-hero-slide-content {
+  @apply absolute inset-0 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  z-index: 2;
+}
+
+/* Category pills */
+.blog-hero-slide-cats {
+  @apply flex flex-wrap gap-2 mb-3;
+}
+
+.blog-hero-slide-cat {
+  @apply inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-ian-accent);
+  backdrop-filter: blur(4px);
+}
+
+/* Title */
+.blog-hero-slide-title {
+  @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 max-w-2xl;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Excerpt */
+.blog-hero-slide-excerpt {
+  @apply text-sm sm:text-base text-white/70 leading-relaxed mb-5 max-w-xl;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* CTA button */
+.blog-hero-slide-cta {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold uppercase tracking-wider rounded-lg no-underline transition-all w-fit;
+  color: #fff;
+  background: var(--color-ian-btn-cta-alt);
+}
+
+.blog-hero-slide-cta:hover {
+  background: var(--color-ian-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(56, 13, 157, 0.35);
+}
+
+.blog-hero-slide-arrow {
+  @apply w-4 h-4;
+  transition: transform 0.2s ease;
+}
+
+.blog-hero-slide-cta:hover .blog-hero-slide-arrow {
+  transform: translateX(3px);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Dot navigation                                                     */
+/* ------------------------------------------------------------------ */
+
+.blog-hero-dots {
+  @apply absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2;
+  z-index: 3;
+}
+
+.blog-hero-dot {
+  @apply w-2.5 h-2.5 rounded-full border-none cursor-pointer transition-all;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.blog-hero-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.blog-hero-dot-active {
+  @apply w-8;
+  border-radius: 9999px;
+  background: #fff;
+}

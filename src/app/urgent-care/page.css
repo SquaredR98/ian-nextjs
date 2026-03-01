@@ -1,0 +1,312 @@
+@reference "tailwindcss";
+
+.uc-page {
+  @apply flex flex-col;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Hero Banner
+   ═══════════════════════════════════════════════════════════════════ */
+
+.uc-hero {
+  background: linear-gradient(rgba(30, 25, 92, 0.8), rgba(56, 13, 157, 0.7)),
+    url("/home/innerbanner.jpg") no-repeat center center;
+  background-size: cover;
+  @apply py-20 px-4;
+}
+
+.uc-hero-inner {
+  @apply max-w-3xl mx-auto text-center;
+}
+
+.uc-hero-title {
+  @apply text-3xl md:text-5xl font-bold text-white mb-4 leading-tight;
+}
+
+.uc-hero-subtitle {
+  @apply text-base md:text-lg text-white/85 leading-relaxed mb-8 max-w-2xl mx-auto;
+}
+
+.uc-hero-actions {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4;
+}
+
+.uc-hero-btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-semibold rounded-full no-underline transition-all duration-200;
+  background-color: white;
+  color: var(--color-ian-dark);
+}
+
+.uc-hero-btn-primary:hover {
+  @apply shadow-lg scale-105;
+}
+
+.uc-hero-btn-secondary {
+  @apply inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white rounded-full no-underline border-2 border-white/40 transition-all duration-200;
+}
+
+.uc-hero-btn-secondary:hover {
+  @apply bg-white/10 border-white/70;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Operating Hours
+   ═══════════════════════════════════════════════════════════════════ */
+
+.uc-hours {
+  @apply py-16 px-4;
+  background-color: var(--color-ian-bg-light);
+}
+
+.uc-hours-inner {
+  @apply max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12;
+}
+
+.uc-hours-content {
+  @apply flex-1 flex flex-col;
+}
+
+.uc-hours-label {
+  @apply text-sm font-bold uppercase tracking-widest mb-2;
+  color: var(--color-ian-primary);
+}
+
+.uc-hours-title {
+  @apply text-2xl md:text-3xl font-bold mb-6;
+  color: var(--color-ian-text);
+}
+
+.uc-hours-card {
+  @apply flex items-start gap-4 p-5 rounded-xl mb-5;
+  background: white;
+  border: 1px solid var(--color-ian-border);
+}
+
+.uc-hours-card-icon {
+  @apply flex items-center justify-center w-12 h-12 rounded-full shrink-0;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
+  color: white;
+}
+
+.uc-hours-card-time {
+  @apply text-lg font-semibold mb-1;
+  color: var(--color-ian-text);
+}
+
+.uc-hours-card-note {
+  @apply text-sm leading-relaxed;
+  color: var(--color-ian-muted);
+}
+
+.uc-hours-phone {
+  @apply inline-flex items-center gap-2 text-base font-semibold no-underline transition-colors duration-200;
+  color: var(--color-ian-dark);
+}
+
+.uc-hours-phone:hover {
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.uc-hours-image-wrap {
+  @apply flex-1 rounded-xl overflow-hidden shadow-md;
+}
+
+.uc-hours-image {
+  @apply w-full h-auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Services Grid
+   ═══════════════════════════════════════════════════════════════════ */
+
+.uc-services {
+  @apply py-16 px-4;
+}
+
+.uc-services-inner {
+  @apply max-w-5xl mx-auto text-center;
+}
+
+.uc-services-label {
+  @apply block text-sm font-bold uppercase tracking-widest mb-2;
+  color: var(--color-ian-primary);
+}
+
+.uc-services-title {
+  @apply text-2xl md:text-3xl font-bold mb-10;
+  color: var(--color-ian-text);
+}
+
+.uc-services-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5;
+}
+
+.uc-service-card {
+  @apply flex flex-col items-center gap-3 p-6 rounded-xl border transition-all duration-300;
+  border-color: var(--color-ian-border);
+  background: white;
+}
+
+.uc-service-card:hover {
+  @apply shadow-md -translate-y-1;
+  border-color: var(--color-ian-primary);
+}
+
+.uc-service-icon {
+  @apply w-14 h-14 flex items-center justify-center rounded-full;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
+  color: white;
+}
+
+.uc-service-name {
+  @apply text-sm font-semibold text-center;
+  color: var(--color-ian-text);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   How It Works
+   ═══════════════════════════════════════════════════════════════════ */
+
+.uc-hiw {
+  @apply py-16 px-4;
+  background: linear-gradient(135deg, var(--color-ian-dark) 0%, #380d9d 100%);
+}
+
+.uc-hiw-inner {
+  @apply max-w-5xl mx-auto text-center;
+}
+
+.uc-hiw-label {
+  @apply block text-sm font-bold uppercase tracking-widest text-white/60 mb-2;
+}
+
+.uc-hiw-title {
+  @apply text-2xl md:text-3xl font-bold text-white mb-12;
+}
+
+.uc-hiw-steps {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+.uc-hiw-step {
+  @apply flex flex-col items-center text-center;
+}
+
+.uc-hiw-number {
+  @apply w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold mb-3 transition-transform duration-300;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.uc-hiw-step:hover .uc-hiw-number {
+  @apply scale-110;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.uc-hiw-step-icon {
+  @apply mb-3;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.uc-hiw-step-title {
+  @apply text-base font-bold text-white mb-2;
+}
+
+.uc-hiw-step-desc {
+  @apply text-sm text-white/70 leading-relaxed max-w-[220px];
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Emergency Disclaimer
+   ═══════════════════════════════════════════════════════════════════ */
+
+.uc-disclaimer {
+  @apply py-5 px-4;
+  background-color: #fffbeb;
+  border-top: 2px solid #f59e0b;
+  border-bottom: 2px solid #f59e0b;
+}
+
+.uc-disclaimer-inner {
+  @apply max-w-3xl mx-auto flex items-center gap-3;
+}
+
+.uc-disclaimer-icon {
+  @apply shrink-0;
+  color: #d97706;
+}
+
+.uc-disclaimer-text {
+  @apply text-sm leading-relaxed;
+  color: #92400e;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CTA Banner
+   ═══════════════════════════════════════════════════════════════════ */
+
+.uc-cta {
+  background: linear-gradient(135deg, var(--color-ian-dark) 0%, #380d9d 100%);
+  @apply py-16 px-4;
+}
+
+.uc-cta-inner {
+  @apply max-w-3xl mx-auto text-center;
+}
+
+.uc-cta-title {
+  @apply text-2xl md:text-3xl font-bold text-white mb-3;
+}
+
+.uc-cta-desc {
+  @apply text-base text-white/80 mb-8;
+}
+
+.uc-cta-actions {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4;
+}
+
+.uc-cta-btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-semibold rounded-full no-underline transition-all duration-200;
+  background-color: white;
+  color: var(--color-ian-dark);
+}
+
+.uc-cta-btn-primary:hover {
+  @apply shadow-lg scale-105;
+}
+
+.uc-cta-btn-secondary {
+  @apply inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white rounded-full no-underline border-2 border-white/40 transition-all duration-200;
+}
+
+.uc-cta-btn-secondary:hover {
+  @apply bg-white/10 border-white/70;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .uc-hero {
+    @apply py-14;
+  }
+
+  .uc-hero-title {
+    @apply text-2xl;
+  }
+
+  .uc-hours-inner {
+    @apply flex-col;
+  }
+
+  .uc-services-grid {
+    @apply grid-cols-2;
+  }
+
+  .uc-hiw-steps {
+    @apply grid-cols-1;
+  }
+}

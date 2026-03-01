@@ -1,0 +1,42 @@
+@reference "tailwindcss";
+.legal-page {
+  @apply max-w-4xl mx-auto px-4 py-12;
+}
+
+.legal-page-title {
+  @apply text-3xl font-bold text-[var(--color-ian-text)] mb-8;
+}
+
+.legal-page-content {
+  @apply max-w-none text-sm text-[var(--color-ian-muted)] leading-relaxed;
+}
+
+.legal-page-content h2 {
+  @apply text-xl font-bold text-[var(--color-ian-text)] mt-8 mb-4;
+}
+
+.legal-page-content h3 {
+  @apply text-lg font-semibold text-[var(--color-ian-text)] mt-6 mb-3;
+}
+
+.legal-page-content p {
+  @apply mb-4;
+}
+
+.legal-page-content ul {
+  @apply pl-6 mb-4;
+  list-style-type: disc;
+}
+
+.legal-page-content ol {
+  @apply pl-6 mb-4;
+  list-style-type: decimal;
+}
+
+.legal-page-content li {
+  @apply mb-2;
+}
+
+.legal-page-content a {
+  @apply text-[var(--color-ian-primary)] underline;
+}

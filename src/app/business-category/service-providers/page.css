@@ -1,0 +1,219 @@
+@reference "tailwindcss";
+
+/* ── Hero ─────────────────────────────────────────────────────────── */
+
+.svc-hero {
+  background: linear-gradient(rgba(30, 25, 92, 0.75), rgba(56, 13, 157, 0.65)),
+    url("/home/innerbanner.jpg") no-repeat center center;
+  background-size: cover;
+  @apply py-14 px-4;
+}
+
+.svc-hero-inner {
+  @apply max-w-3xl mx-auto text-center;
+}
+
+.svc-hero-title {
+  @apply text-3xl md:text-4xl font-bold text-white mb-3;
+}
+
+.svc-hero-subtitle {
+  @apply text-base md:text-lg text-white/80 leading-relaxed;
+}
+
+/* ── Page layout ──────────────────────────────────────────────────── */
+
+.svc-page {
+  @apply bg-(--color-ian-bg-light);
+}
+
+.svc-page-inner {
+  @apply max-w-6xl mx-auto px-4 py-12;
+}
+
+/* ── Group section ────────────────────────────────────────────────── */
+
+.svc-group {
+  @apply mb-14;
+}
+
+.svc-group-header {
+  @apply flex items-center gap-4 mb-8;
+}
+
+.svc-group-title {
+  @apply text-xl md:text-2xl font-bold text-(--color-ian-text) whitespace-nowrap;
+}
+
+.svc-group-header::after {
+  content: "";
+  @apply flex-1 h-px;
+  background-color: var(--color-ian-border);
+}
+
+.svc-group-count {
+  @apply text-sm text-(--color-ian-muted) whitespace-nowrap;
+}
+
+/* ── Card grid ────────────────────────────────────────────────────── */
+
+.svc-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* ── Individual card ──────────────────────────────────────────────── */
+
+.svc-card {
+  @apply flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-(--color-ian-border) no-underline transition-all duration-300 cursor-pointer;
+}
+
+.svc-card:hover {
+  @apply shadow-lg -translate-y-1;
+}
+
+.svc-card-img-wrap {
+  @apply relative w-full aspect-[16/10] overflow-hidden;
+}
+
+.svc-card-img {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.svc-card:hover .svc-card-img {
+  @apply scale-110;
+}
+
+.svc-card-overlay {
+  @apply absolute inset-0 transition-opacity duration-300 opacity-0;
+  background: linear-gradient(to top, rgba(30, 25, 92, 0.4), transparent);
+}
+
+.svc-card:hover .svc-card-overlay {
+  @apply opacity-100;
+}
+
+/* ── Card body ────────────────────────────────────────────────────── */
+
+.svc-card-body {
+  @apply p-5 flex flex-col flex-1;
+}
+
+.svc-card-name {
+  @apply text-lg font-semibold text-(--color-ian-text) mb-1 transition-colors duration-200;
+}
+
+.svc-card:hover .svc-card-name {
+  color: var(--color-ian-dark);
+}
+
+.svc-card-desc {
+  @apply text-sm text-(--color-ian-muted) leading-relaxed line-clamp-2 mb-3;
+}
+
+.svc-card-cta {
+  @apply text-sm font-semibold mt-auto transition-colors duration-200;
+  color: var(--color-ian-dark);
+}
+
+.svc-card:hover .svc-card-cta {
+  color: var(--color-ian-btn-cta-alt);
+}
+
+/* ── FAQ Section ──────────────────────────────────────────────────── */
+
+.svc-faq {
+  @apply py-16 px-4;
+  background: white;
+  border-top: 1px solid var(--color-ian-border);
+}
+
+.svc-faq-inner {
+  @apply max-w-3xl mx-auto;
+}
+
+.svc-faq-label {
+  @apply block text-xs font-bold uppercase tracking-widest mb-3 text-center;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.svc-faq-title {
+  @apply text-2xl md:text-3xl font-bold text-center mb-10;
+  color: var(--color-ian-dark);
+}
+
+.svc-faq-accordion {
+  @apply w-full;
+}
+
+.svc-faq-accordion [data-slot="accordion-item"] {
+  @apply border rounded-lg mb-3 bg-(--color-ian-bg-light) overflow-hidden;
+  border-color: var(--color-ian-border);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.svc-faq-accordion [data-slot="accordion-item"]:hover {
+  border-color: #c5cad0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.svc-faq-accordion [data-slot="accordion-item"]:has([data-state="open"]) {
+  border-color: var(--color-ian-btn-cta-alt);
+  box-shadow: 0 2px 12px rgba(56, 13, 157, 0.1);
+  background: white;
+}
+
+.svc-faq-accordion [data-slot="accordion-trigger"] {
+  @apply px-5 py-4 text-base font-semibold;
+  color: var(--color-ian-dark);
+}
+
+.svc-faq-accordion [data-slot="accordion-trigger"]:hover {
+  text-decoration: none;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.svc-faq-accordion [data-slot="accordion-trigger"] svg {
+  @apply size-5;
+  color: var(--color-ian-muted);
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.svc-faq-accordion [data-slot="accordion-item"]:has([data-state="open"]) [data-slot="accordion-trigger"] svg {
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.svc-faq-accordion [data-slot="accordion-content"] {
+  @apply text-sm leading-relaxed;
+  color: var(--color-ian-muted);
+}
+
+.svc-faq-accordion [data-slot="accordion-content"] > div {
+  @apply px-5 pb-5;
+  border-top: 1px solid var(--color-ian-border);
+  margin: 0 1rem;
+  padding-top: 1rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .svc-hero {
+    @apply py-10;
+  }
+
+  .svc-hero-title {
+    @apply text-2xl;
+  }
+
+  .svc-group-header {
+    @apply flex-col items-start gap-1;
+  }
+
+  .svc-group-header::after {
+    @apply hidden;
+  }
+
+  .svc-faq-title {
+    @apply text-xl;
+  }
+}

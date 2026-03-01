@@ -1,0 +1,40 @@
+@reference "tailwindcss";
+.embla {
+  @apply relative;
+}
+
+.embla-viewport {
+  @apply overflow-hidden;
+}
+
+.embla-container {
+  @apply flex;
+}
+
+.embla-slide {
+  @apply flex-[0_0_100%] min-w-0 pl-4;
+}
+
+@media (min-width: 768px) {
+  .embla-slide {
+    @apply flex-[0_0_50%];
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla-slide {
+    @apply flex-[0_0_33.333%];
+  }
+}
+
+.embla-nav {
+  @apply flex items-center justify-center gap-2 mt-4;
+}
+
+.embla-nav-btn {
+  @apply w-9 h-9 rounded-full border border-[var(--color-ian-border)] flex items-center justify-center text-[var(--color-ian-text)] hover:bg-[var(--color-ian-bg-light)] transition-colors cursor-pointer;
+}
+
+.embla-nav-icon {
+  @apply w-4 h-4;
+}

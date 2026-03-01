@@ -1,0 +1,60 @@
+@reference "tailwindcss";
+.provider-signup-page {
+  @apply flex items-center justify-center px-4 py-12;
+}
+
+.provider-signup-card {
+  @apply w-full max-w-2xl bg-white rounded-lg border border-[var(--color-ian-border)] shadow-sm p-8;
+}
+
+.provider-signup-title {
+  @apply text-2xl font-bold text-[var(--color-ian-text)] mb-2;
+}
+
+.provider-signup-subtitle {
+  @apply text-sm text-[var(--color-ian-muted)] mb-8;
+}
+
+.provider-signup-form {
+  @apply flex flex-col gap-6;
+}
+
+.provider-signup-fieldset {
+  @apply border border-[var(--color-ian-border)] rounded-lg p-5 flex flex-col gap-4;
+}
+
+.provider-signup-legend {
+  @apply text-sm font-semibold text-[var(--color-ian-text)] px-2;
+}
+
+.provider-signup-row {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.provider-signup-field {
+  @apply flex flex-col gap-1;
+}
+
+.provider-signup-label {
+  @apply text-sm font-medium text-[var(--color-ian-text)];
+}
+
+.provider-signup-input {
+  @apply w-full px-3 py-2.5 text-sm rounded border border-[var(--color-ian-border)] text-[var(--color-ian-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-ian-primary)];
+}
+
+.provider-signup-select {
+  @apply w-full px-3 py-2.5 text-sm rounded border border-[var(--color-ian-border)] text-[var(--color-ian-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-ian-primary)] bg-white appearance-none cursor-pointer;
+}
+
+.provider-signup-submit {
+  @apply w-full py-3 text-sm font-medium rounded bg-[var(--color-ian-primary)] text-white hover:bg-blue-700 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.provider-signup-success {
+  @apply text-sm text-[var(--color-ian-success)] text-center;
+}
+
+.provider-signup-error {
+  @apply text-sm text-[var(--color-ian-danger)] text-center;
+}

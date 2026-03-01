@@ -1,0 +1,45 @@
+@reference "tailwindcss";
+
+.provider-card {
+  @apply flex items-start gap-4 p-4 rounded-xl border bg-white no-underline min-h-[137px];
+  border-color: var(--color-ian-border);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.provider-card:hover {
+  border-color: #c5cad0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.provider-card-logo-wrap {
+  @apply shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-gray-50;
+  border: 1px solid var(--color-ian-border);
+}
+
+.provider-card-logo {
+  @apply w-full h-full object-contain;
+}
+
+.provider-card-info {
+  @apply flex flex-col gap-1 min-w-0;
+}
+
+.provider-card-name {
+  @apply text-sm font-bold truncate;
+  color: var(--color-ian-dark);
+}
+
+.provider-card-location {
+  @apply text-xs;
+  color: var(--color-ian-muted);
+}
+
+.provider-card-rating {
+  @apply mt-1;
+}
+
+.provider-card-verified {
+  @apply inline-flex items-center gap-1 text-xs font-semibold mt-1;
+  color: var(--color-ian-success);
+}

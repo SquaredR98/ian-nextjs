@@ -1,0 +1,239 @@
+@reference "tailwindcss";
+
+/* ─── Wrapper: glassmorphism overlay ─── */
+.search-bar-wrapper {
+  @apply w-full p-5 rounded-2xl;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ═══════════════════════════════════════
+   DESKTOP: Pill Tabs (hidden on mobile)
+   ═══════════════════════════════════════ */
+.search-tabs-desktop {
+  @apply hidden md:flex gap-2 mb-4;
+}
+
+.search-tab {
+  @apply flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white cursor-pointer
+         border border-white/25 transition-all duration-200 whitespace-nowrap;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.search-tab:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.search-tab-active {
+  @apply bg-white text-gray-900 border-white;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
+.search-tab-active:hover {
+  @apply bg-white;
+}
+
+.search-tab-icon {
+  @apply w-4 h-4 shrink-0;
+}
+
+/* ═══════════════════════════════════════
+   MOBILE: Dropdown selector (hidden on desktop)
+   ═══════════════════════════════════════ */
+.search-tabs-mobile {
+  @apply md:hidden relative mb-3;
+}
+
+.search-mobile-trigger {
+  @apply flex items-center gap-2 w-full px-4 py-2.5 rounded-xl text-sm font-medium text-white cursor-pointer
+         border border-white/25 transition-all duration-200;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.search-mobile-trigger:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.search-mobile-menu {
+  @apply absolute z-20 top-full left-0 right-0 mt-1 rounded-xl overflow-hidden;
+  background: rgba(30, 25, 92, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.search-mobile-option {
+  @apply flex items-center gap-2 w-full px-4 py-3 text-sm font-medium text-white/80 cursor-pointer
+         transition-colors duration-150 border-none bg-transparent;
+}
+
+.search-mobile-option:hover {
+  @apply text-white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-mobile-option-active {
+  @apply text-white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ═══════════════════════════════════════
+   Search Fields Row
+   ═══════════════════════════════════════ */
+.search-fields {
+  @apply flex flex-col md:flex-row items-stretch bg-white rounded-xl overflow-hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Google Places autocomplete dropdown — full width, not clipped */
+.pac-container {
+  min-width: 320px !important;
+  z-index: 9999 !important;
+}
+
+.search-field-group {
+  @apply flex-1 flex items-center px-4 py-3 gap-2 relative min-w-0;
+}
+
+.search-field-icon {
+  @apply w-5 h-5 shrink-0;
+  color: var(--color-ian-dark);
+  opacity: 0.5;
+}
+
+/* Input wrapper for animated placeholder */
+.search-field-input-wrap {
+  @apply relative flex-1 min-w-0;
+}
+
+.search-field-input {
+  @apply w-full text-sm text-gray-700 bg-transparent border-none outline-none placeholder:text-gray-400
+         truncate;
+}
+
+.search-field-input:focus {
+  @apply text-gray-900;
+}
+
+/* Animated rotating placeholder — single-line truncated */
+.search-placeholder {
+  @apply absolute inset-0 flex items-center text-sm text-gray-400 pointer-events-none select-none
+         truncate whitespace-nowrap overflow-hidden;
+  transition: opacity 0.3s ease;
+}
+
+.search-placeholder-visible {
+  opacity: 1;
+}
+
+.search-placeholder-hidden {
+  opacity: 0;
+}
+
+/* Specialty count badge — subtle outline style */
+.search-specialty-count {
+  @apply shrink-0 text-[10px] font-semibold w-5 h-5 flex items-center justify-center rounded-full;
+  color: var(--color-ian-dark);
+  border: 1.5px solid var(--color-ian-dark);
+  opacity: 0.35;
+}
+
+/* Vertical divider between fields */
+.search-field-divider {
+  @apply hidden md:block w-px my-3 mx-0 rounded-full;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Detect Location Button ─── */
+.search-locate-btn {
+  @apply shrink-0 p-1.5 rounded-full cursor-pointer transition-all duration-200 border-none;
+  color: var(--color-ian-dark);
+  opacity: 0.4;
+  background: transparent;
+}
+
+.search-locate-btn:hover {
+  opacity: 1;
+  background: rgba(30, 25, 92, 0.08);
+}
+
+.search-locate-btn:disabled {
+  @apply cursor-not-allowed;
+  opacity: 0.3;
+}
+
+/* ─── Specialty Dropdown ─── */
+.specialty-dropdown {
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0 !important;
+  width: var(--radix-popover-trigger-width) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.specialty-dropdown [data-slot="command-item"][data-selected="true"] {
+  background-color: var(--color-ian-dark);
+  color: white;
+}
+
+.specialty-dropdown [data-slot="command-item"]:hover {
+  background-color: var(--color-ian-dark);
+  color: white;
+}
+
+.specialty-dropdown-item {
+  @apply cursor-pointer px-4 py-2.5 text-sm;
+}
+
+.specialty-dropdown-loading {
+  @apply flex items-center justify-center gap-2 py-6;
+}
+
+/* ─── Search Button ─── */
+.search-submit-btn {
+  @apply flex items-center justify-center gap-2 px-8 py-3 text-sm font-bold text-white cursor-pointer
+         transition-all duration-200 border-none tracking-wide uppercase shrink-0;
+  background: linear-gradient(135deg, var(--color-ian-dark), var(--color-ian-btn-search));
+}
+
+.search-submit-btn:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 4px 16px rgba(30, 25, 92, 0.35);
+}
+
+.search-submit-btn:disabled {
+  @apply cursor-not-allowed;
+  opacity: 0.7;
+}
+
+.search-submit-icon {
+  @apply w-4 h-4;
+}
+
+/* ═══════════════════════════════════════
+   Mobile Responsive
+   ═══════════════════════════════════════ */
+@media (max-width: 767px) {
+  .search-bar-wrapper {
+    @apply p-3 rounded-xl;
+  }
+
+  .search-fields {
+    @apply rounded-xl;
+  }
+
+  .search-field-group {
+    @apply border-b border-gray-100 px-4 py-3;
+  }
+
+  .search-field-group:last-of-type {
+    @apply border-b-0;
+  }
+
+  .search-submit-btn {
+    @apply rounded-b-xl py-3;
+  }
+}

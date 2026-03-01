@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+/* ─── shadcn-ui theme (IAN brand) ─────────────────────────── */
+:root {
+  --radius: 0.625rem;
+
+  /* Core surfaces */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.262 0.009 248.19);
+
+  /* Cards & Popovers */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.262 0.009 248.19);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.262 0.009 248.19);
+
+  /* Primary = IAN dark purple #1E195C */
+  --primary: oklch(0.27 0.115 278.757);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary = neutral gray */
+  --secondary: oklch(0.982 0.002 247.839);
+  --secondary-foreground: oklch(0.262 0.009 248.19);
+
+  /* Muted */
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.558 0.016 244.893);
+
+  /* Accent = IAN cyan #00e5ff */
+  --accent: oklch(0.844 0.146 209.285);
+  --accent-foreground: oklch(0.145 0 0);
+
+  /* Destructive = IAN danger #dc3545 */
+  --destructive: oklch(0.592 0.202 21.239);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* Borders & inputs */
+  --border: oklch(0.911 0.007 247.901);
+  --input: oklch(0.911 0.007 247.901);
+  --ring: oklch(0.27 0.115 278.757);
+
+  /* Chart colors */
+  --chart-1: oklch(0.27 0.115 278.757);
+  --chart-2: oklch(0.844 0.146 209.285);
+  --chart-3: oklch(0.552 0.123 157.012);
+  --chart-4: oklch(0.844 0.172 84.934);
+  --chart-5: oklch(0.592 0.202 21.239);
+
+  /* Sidebar */
+  --sidebar: oklch(0.982 0.002 247.839);
+  --sidebar-foreground: oklch(0.262 0.009 248.19);
+  --sidebar-primary: oklch(0.27 0.115 278.757);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.262 0.009 248.19);
+  --sidebar-border: oklch(0.911 0.007 247.901);
+  --sidebar-ring: oklch(0.27 0.115 278.757);
+
+  /* ─── IAN custom vars (used by custom components) ───── */
+  --color-ian-dark: #1e195c;
+  --color-ian-dark-hover: #16124a;
+  --color-ian-btn-tab: #003298;
+  --color-ian-btn-search: #08309c;
+  --color-ian-btn-search-hover: #400b9e;
+  --color-ian-tab-bg: rgba(255, 255, 255, 0.1);
+  --color-ian-accent: #00e5ff;
+  --color-ian-dark-alt: #27235e;
+  --color-ian-btn-cta: #222257;
+  --color-ian-btn-cta-alt: #380d9d;
+  --color-ian-breadcrumb-active: #3d0aab;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.844 0.146 209.285);
+  --primary-foreground: oklch(0.145 0 0);
+
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.27 0.115 278.757);
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.592 0.202 21.239);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.3 0 0);
+  --input: oklch(0.3 0 0);
+  --ring: oklch(0.844 0.146 209.285);
+
+  --chart-1: oklch(0.844 0.146 209.285);
+  --chart-2: oklch(0.354 0.199 282.83);
+  --chart-3: oklch(0.552 0.123 157.012);
+  --chart-4: oklch(0.844 0.172 84.934);
+  --chart-5: oklch(0.592 0.202 21.239);
+
+  --sidebar: oklch(0.145 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.844 0.146 209.285);
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.3 0 0);
+  --sidebar-ring: oklch(0.844 0.146 209.285);
+}
+
+/* ─── shadcn-ui Tailwind v4 theme mapping ─────────────────── */
+@theme inline {
+  /* Brand Colors (existing) */
+  --color-ian-primary: #0d6efd;
+  --color-ian-secondary: #6c757d;
+  --color-ian-dark: #1e195c;
+  --color-ian-dark-hover: #16124a;
+  --color-ian-success: #198754;
+  --color-ian-warning: #ffc107;
+  --color-ian-danger: #dc3545;
+  --color-ian-star: #ffc107;
+  --color-ian-bg-light: #f8f9fa;
+  --color-ian-text: #212529;
+  --color-ian-muted: #6c757d;
+  --color-ian-border: #dee2e6;
+
+  /* Font Family */
+  --font-sans: "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+
+  /* Bootstrap 5 Breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* shadcn color mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ─── Base styles ─────────────────────────────────────────── */
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ian-text);
+  background: var(--background);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ─── Word Rotator Animation ─────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-fade-out-down {
+  animation: fadeOutDown 0.5s ease forwards;
+}
+
+/* ─── Shimmer CTA button ─────────────────────────────────── */
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+  60% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-ian-btn-cta);
+}
+
+.btn-shimmer:hover {
+  transform: scale(1.05);
+}
+
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+.btn-shimmer:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.btn-shimmer-alt {
+  background-color: var(--color-ian-btn-cta-alt);
+}
+
+/* ─── Universal shimmer effect ───────────────────────────── */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.shimmer:hover {
+  transform: scale(1.05);
+}
+
+.shimmer::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+.shimmer:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+/* ─── Scroll to top button ───────────────────────────────── */
+.scroll-to-top {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ─── Embla Carousel ─────────────────────────────────────── */
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 8px;
+}
+
+@media (min-width: 600px) {
+  .embla__slide--2 {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .embla__slide--3 {
+    flex: 0 0 33.333%;
+  }
+}

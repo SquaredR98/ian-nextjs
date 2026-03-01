@@ -1,0 +1,44 @@
+@reference "tailwindcss";
+.photo-gallery {
+  @apply flex flex-col gap-3;
+}
+
+.photo-gallery-main {
+  @apply w-full aspect-[16/10] rounded-lg overflow-hidden bg-gray-100;
+}
+
+.photo-gallery-main-img {
+  @apply w-full h-full object-cover;
+}
+
+.photo-gallery-thumbs-wrap {
+  @apply flex items-center gap-2;
+}
+
+.photo-gallery-thumbs-viewport {
+  @apply flex-1 overflow-hidden;
+}
+
+.photo-gallery-thumbs {
+  @apply flex gap-2;
+}
+
+.photo-gallery-thumb {
+  @apply flex-[0_0_80px] h-[60px] rounded overflow-hidden border-2 border-transparent cursor-pointer opacity-60 transition-all;
+}
+
+.photo-gallery-thumb-active {
+  @apply border-[var(--color-ian-primary)] opacity-100;
+}
+
+.photo-gallery-thumb-img {
+  @apply w-full h-full object-cover;
+}
+
+.photo-gallery-nav {
+  @apply shrink-0 w-8 h-8 rounded-full border border-[var(--color-ian-border)] flex items-center justify-center text-[var(--color-ian-text)] hover:bg-[var(--color-ian-bg-light)] transition-colors cursor-pointer;
+}
+
+.photo-gallery-nav-icon {
+  @apply w-4 h-4;
+}

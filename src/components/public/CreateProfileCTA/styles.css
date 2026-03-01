@@ -1,0 +1,81 @@
+@reference "tailwindcss";
+
+.cta-profile {
+  @apply relative w-full overflow-hidden;
+}
+
+.cta-profile-bg {
+  @apply absolute inset-0;
+  background: url("/home/error-page-bg.jpeg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.cta-profile-bg::after {
+  content: "";
+  @apply absolute inset-0;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 25, 92, 0.88),
+    rgba(56, 13, 157, 0.82)
+  );
+}
+
+.cta-profile-inner {
+  @apply relative z-10 py-20 px-4;
+}
+
+.cta-profile-label {
+  @apply block text-sm font-bold uppercase tracking-widest text-white/50 text-center mb-2;
+}
+
+.cta-profile-title {
+  @apply text-3xl md:text-4xl font-bold text-white text-center mb-12;
+}
+
+.cta-profile-grid {
+  @apply max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12;
+}
+
+.cta-profile-video {
+  @apply flex-1 w-full;
+}
+
+.cta-profile-video iframe {
+  @apply w-full rounded-xl shadow-2xl;
+  aspect-ratio: 16 / 9;
+}
+
+.cta-profile-info {
+  @apply flex-1 flex flex-col gap-5;
+}
+
+.cta-profile-desc-bold {
+  @apply text-lg md:text-xl text-white font-medium leading-relaxed;
+}
+
+.cta-profile-desc {
+  @apply text-sm text-white/75 leading-relaxed;
+}
+
+.cta-profile-actions {
+  @apply flex flex-col sm:flex-row gap-4 mt-2;
+}
+
+.cta-profile-btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold rounded-full no-underline transition-all duration-200;
+  background-color: white;
+  color: var(--color-ian-dark);
+}
+
+.cta-profile-btn-primary:hover {
+  @apply shadow-lg scale-105;
+}
+
+.cta-profile-btn-secondary {
+  @apply inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white rounded-full no-underline border-2 border-white/40 transition-all duration-200;
+}
+
+.cta-profile-btn-secondary:hover {
+  @apply bg-white/10 border-white/70;
+}

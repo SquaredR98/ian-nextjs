@@ -1,0 +1,56 @@
+@reference "tailwindcss";
+.google-reviews {
+  @apply flex flex-col gap-4;
+}
+
+.google-reviews-header {
+  @apply flex items-center gap-2;
+}
+
+.google-reviews-icon {
+  @apply w-6 h-6;
+}
+
+.google-reviews-score {
+  @apply text-lg font-bold text-[var(--color-ian-text)];
+}
+
+.google-reviews-count {
+  @apply text-sm text-[var(--color-ian-muted)];
+}
+
+.google-reviews-list {
+  @apply flex flex-col gap-3;
+}
+
+.google-review-card {
+  @apply p-4 rounded-lg border border-[var(--color-ian-border)] bg-[var(--color-ian-bg-light)];
+}
+
+.google-review-card-header {
+  @apply flex items-center gap-3 mb-2;
+}
+
+.google-review-avatar {
+  @apply w-10 h-10 rounded-full object-cover;
+}
+
+.google-review-meta {
+  @apply flex flex-col gap-0.5;
+}
+
+.google-review-author {
+  @apply text-sm font-medium text-[var(--color-ian-text)];
+}
+
+.google-review-text {
+  @apply text-sm text-[var(--color-ian-muted)] leading-relaxed;
+}
+
+.google-review-time {
+  @apply text-xs text-gray-400 mt-2 block;
+}
+
+.google-reviews-cta {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded bg-[var(--color-ian-primary)] text-white hover:bg-blue-700 transition-colors no-underline self-start;
+}

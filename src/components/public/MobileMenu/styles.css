@@ -1,0 +1,56 @@
+@reference "tailwindcss";
+.mobile-menu-overlay {
+  @apply fixed inset-0 z-50 bg-black/50 lg:hidden;
+}
+
+.mobile-menu {
+  @apply fixed top-0 right-0 bottom-0 w-[280px] bg-white shadow-xl flex flex-col z-50;
+}
+
+.mobile-menu-header {
+  @apply flex items-center justify-between px-4 py-3 border-b border-[var(--color-ian-border)];
+}
+
+.mobile-menu-title {
+  @apply text-base font-semibold text-[var(--color-ian-text)];
+}
+
+.mobile-menu-close {
+  @apply p-1 rounded hover:bg-gray-100 cursor-pointer;
+}
+
+.mobile-menu-close-icon {
+  @apply w-5 h-5 text-[var(--color-ian-text)];
+}
+
+.mobile-menu-items {
+  @apply flex-1 overflow-y-auto py-2;
+}
+
+.mobile-menu-link {
+  @apply block px-4 py-3 text-sm font-medium text-[var(--color-ian-text)] hover:bg-[var(--color-ian-bg-light)] no-underline;
+}
+
+.mobile-menu-group {
+  @apply border-b border-gray-100;
+}
+
+.mobile-menu-group-trigger {
+  @apply w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-[var(--color-ian-text)] hover:bg-[var(--color-ian-bg-light)] cursor-pointer bg-transparent border-none;
+}
+
+.mobile-menu-group-icon {
+  @apply w-4 h-4 transition-transform duration-200;
+}
+
+.mobile-menu-group-icon-open {
+  @apply rotate-180;
+}
+
+.mobile-menu-group-items {
+  @apply pl-4 pb-2;
+}
+
+.mobile-menu-sublink {
+  @apply block px-4 py-2 text-sm text-[var(--color-ian-muted)] hover:text-[var(--color-ian-primary)] no-underline;
+}

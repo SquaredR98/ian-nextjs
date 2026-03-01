@@ -1,0 +1,53 @@
+@reference "tailwindcss";
+
+.vp {
+  @apply py-20 px-4;
+  background-color: var(--color-ian-bg-light);
+}
+
+.vp-inner {
+  @apply max-w-6xl mx-auto text-center;
+}
+
+.vp-label {
+  @apply text-sm font-bold uppercase tracking-widest;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.vp-title {
+  @apply text-2xl md:text-3xl font-bold text-(--color-ian-text) mt-3 mb-3;
+}
+
+.vp-subtitle {
+  @apply text-base text-(--color-ian-muted) max-w-2xl mx-auto mb-12;
+}
+
+.vp-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+.vp-card {
+  @apply flex flex-col items-center text-center bg-white rounded-xl p-6 border border-(--color-ian-border) transition-all duration-300;
+}
+
+.vp-card:hover {
+  @apply shadow-lg -translate-y-1;
+  border-color: var(--color-ian-dark);
+}
+
+.vp-card-icon-wrap {
+  @apply w-14 h-14 rounded-full flex items-center justify-center mb-4;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
+}
+
+.vp-card-icon {
+  @apply w-6 h-6 text-white;
+}
+
+.vp-card-title {
+  @apply text-base font-bold text-(--color-ian-text) mb-2;
+}
+
+.vp-card-desc {
+  @apply text-sm text-(--color-ian-muted) leading-relaxed;
+}

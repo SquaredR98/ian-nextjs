@@ -1,0 +1,197 @@
+@reference "tailwindcss";
+
+/* ---- Section wrapper ---- */
+
+.testimonials-section {
+  @apply py-20 px-4;
+  background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);
+}
+
+.testimonials-section-inner {
+  @apply max-w-7xl mx-auto flex flex-col gap-12;
+}
+
+/* ---- Header ---- */
+
+.testimonials-header {
+  @apply flex flex-col items-center text-center gap-3;
+}
+
+.testimonials-label {
+  @apply text-xs font-bold uppercase tracking-widest;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.testimonials-heading {
+  @apply text-2xl md:text-3xl font-bold leading-tight;
+  color: var(--color-ian-dark);
+}
+
+.testimonials-desc {
+  @apply text-sm leading-relaxed max-w-2xl;
+  color: var(--color-ian-muted);
+}
+
+/* ---- Carousel ---- */
+
+.testimonials-carousel {
+  @apply flex flex-col gap-8;
+}
+
+.testimonials-track {
+  @apply grid gap-6;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .testimonials-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* hide 3rd card on tablet */
+  .testimonial-card-pos-2 {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials-track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* show all 3 on desktop */
+  .testimonial-card-pos-2 {
+    @apply block;
+  }
+}
+
+/* On mobile, only show first card */
+@media (max-width: 767px) {
+  .testimonial-card-pos-1,
+  .testimonial-card-pos-2 {
+    @apply hidden;
+  }
+}
+
+/* ---- Card ---- */
+
+.testimonial-card {
+  @apply flex flex-col gap-4 p-6 rounded-2xl bg-white;
+  border: 1px solid var(--color-ian-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(30, 25, 92, 0.1);
+}
+
+.testimonial-card-quote {
+  @apply flex items-center justify-center w-11 h-11 rounded-xl;
+  background: linear-gradient(135deg, rgba(56, 13, 157, 0.1), rgba(30, 25, 92, 0.06));
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.testimonial-card-stars {
+  @apply flex items-center gap-1;
+}
+
+.testimonial-card-text {
+  @apply text-sm leading-relaxed flex-1;
+  color: var(--color-ian-text);
+}
+
+.testimonial-card-footer {
+  @apply flex items-center justify-between pt-4;
+  border-top: 1px solid var(--color-ian-border);
+}
+
+.testimonial-card-author {
+  @apply flex items-center gap-3;
+}
+
+.testimonial-card-photo {
+  @apply w-11 h-11 rounded-full object-cover shrink-0;
+}
+
+.testimonial-card-avatar {
+  @apply w-11 h-11 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0;
+  background: linear-gradient(135deg, var(--color-ian-btn-cta-alt), var(--color-ian-dark));
+}
+
+.testimonial-card-author-info {
+  @apply flex flex-col;
+}
+
+.testimonial-card-name {
+  @apply text-sm font-semibold;
+  color: var(--color-ian-dark);
+}
+
+.testimonial-card-verified {
+  @apply text-xs;
+  color: var(--color-ian-muted);
+}
+
+.testimonial-card-google {
+  @apply w-7 h-7 object-contain opacity-70;
+}
+
+/* ---- Navigation ---- */
+
+.testimonials-nav {
+  @apply flex items-center justify-center gap-4;
+}
+
+.testimonials-nav-btn {
+  @apply flex items-center justify-center w-10 h-10 rounded-full border-none cursor-pointer transition-all;
+  background: white;
+  color: var(--color-ian-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.testimonials-nav-btn:hover {
+  background: var(--color-ian-dark);
+  color: white;
+}
+
+.testimonials-dots {
+  @apply flex items-center gap-2;
+}
+
+.testimonials-dot {
+  @apply w-2.5 h-2.5 rounded-full cursor-pointer border-none transition-all duration-300;
+  background-color: var(--color-ian-border);
+}
+
+.testimonials-dot-active {
+  @apply w-8;
+  border-radius: 9999px;
+  background-color: var(--color-ian-btn-cta-alt);
+}
+
+/* ---- Footer ---- */
+
+.testimonials-footer {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4;
+}
+
+.testimonials-view-all {
+  @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full no-underline transition-all;
+  color: var(--color-ian-dark);
+  border: 2px solid var(--color-ian-dark);
+}
+
+.testimonials-view-all:hover {
+  background-color: var(--color-ian-dark);
+  color: white;
+}
+
+.testimonials-submit-btn {
+  @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-full no-underline transition-all;
+  background-color: var(--color-ian-dark);
+}
+
+.testimonials-submit-btn:hover {
+  background-color: var(--color-ian-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(30, 25, 92, 0.25);
+}

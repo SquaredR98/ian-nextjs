@@ -1,0 +1,5 @@
+@reference "tailwindcss";
+
+.home-provider-cta {
+  @apply mx-4 max-w-7xl lg:mx-auto;
+}

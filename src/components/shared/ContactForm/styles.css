@@ -1,0 +1,45 @@
+@reference "tailwindcss";
+
+.contact-form {
+  @apply flex flex-col gap-6;
+}
+
+.contact-form-fields {
+  @apply flex flex-col gap-6;
+}
+
+.contact-form-row {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-6;
+}
+
+.contact-form-field {
+  @apply flex flex-col gap-1;
+}
+
+.contact-form-label {
+  @apply text-base font-medium text-[var(--color-ian-text)];
+}
+
+.contact-form-input {
+  @apply w-full px-3 py-2.5 text-base bg-[var(--color-ian-bg-light)] border-0 rounded text-[var(--color-ian-text)] focus:outline-none focus:ring-1 focus:ring-[var(--color-ian-primary)] transition-colors;
+}
+
+.contact-form-textarea {
+  @apply w-full px-3 py-2.5 text-base bg-[var(--color-ian-bg-light)] border-0 rounded text-[var(--color-ian-text)] focus:outline-none focus:ring-1 focus:ring-[var(--color-ian-primary)] resize-y min-h-[120px] transition-colors;
+}
+
+.contact-form-error {
+  @apply text-xs text-[var(--color-ian-danger)];
+}
+
+.contact-form-submit {
+  @apply w-fit px-8 py-2.5 text-sm font-semibold rounded bg-[var(--color-ian-dark)] text-white hover:bg-[var(--color-ian-dark-hover)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.contact-form-success {
+  @apply text-base text-[var(--color-ian-success)] text-center mt-2;
+}
+
+.contact-form-error-msg {
+  @apply text-base text-[var(--color-ian-danger)] text-center mt-2;
+}

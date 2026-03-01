@@ -1,0 +1,16 @@
+@reference "tailwindcss";
+.rating-stars {
+  @apply inline-flex items-center gap-0.5;
+}
+
+.rating-star {
+  @apply text-[var(--color-ian-star)];
+}
+
+.rating-star-empty {
+  @apply text-gray-300;
+}
+
+.rating-count {
+  @apply ml-1 text-xs text-[var(--color-ian-muted)];
+}

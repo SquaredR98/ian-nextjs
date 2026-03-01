@@ -1,0 +1,31 @@
+@reference "tailwindcss";
+
+.hero {
+  @apply relative w-full bg-cover bg-center bg-no-repeat;
+  background-image: url("/home/bannerlaf.jpg");
+  min-height: 500px;
+}
+
+.hero-content {
+  @apply relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24;
+  max-width: 60%;
+}
+
+.hero-subtitle {
+  @apply text-lg md:text-2xl text-white mb-3 font-light italic;
+}
+
+.hero-title {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-8;
+}
+
+.hero-search {
+  @apply max-w-xl;
+}
+
+/* Responsive - on smaller screens allow full width */
+@media (max-width: 1023px) {
+  .hero-content {
+    max-width: 100%;
+  }
+}

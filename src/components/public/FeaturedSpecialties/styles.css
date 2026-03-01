@@ -1,0 +1,28 @@
+@reference "tailwindcss";
+.featured-specialties {
+  @apply py-12 px-4 max-w-7xl mx-auto;
+}
+
+.featured-specialties-title {
+  @apply text-2xl font-bold text-[var(--color-ian-text)] text-center mb-8;
+}
+
+.featured-specialties-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.featured-specialty-card {
+  @apply rounded-lg overflow-hidden border border-[var(--color-ian-border)] bg-white hover:shadow-lg transition-shadow;
+}
+
+.featured-specialty-image-wrap {
+  @apply w-full aspect-[3/2] bg-gray-100 overflow-hidden;
+}
+
+.featured-specialty-image {
+  @apply w-full h-full object-cover;
+}
+
+.featured-specialty-name {
+  @apply block px-4 py-3 text-sm font-semibold text-[var(--color-ian-text)] text-center;
+}

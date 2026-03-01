@@ -1,0 +1,222 @@
+@reference "tailwindcss";
+
+/* ---- Hero ---- */
+
+.team-hero {
+	@apply flex flex-col items-center text-center gap-3 px-4 py-16;
+	background: linear-gradient(135deg, var(--color-ian-dark) 0%, var(--color-ian-btn-cta-alt) 100%);
+}
+
+.team-hero-label {
+	@apply text-xs font-bold uppercase tracking-widest;
+	color: var(--color-ian-accent);
+}
+
+.team-hero-heading {
+	@apply text-3xl md:text-4xl font-bold text-white leading-tight;
+}
+
+.team-hero-desc {
+	@apply text-sm md:text-base leading-relaxed max-w-2xl;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---- Page ---- */
+
+.team-page {
+	@apply max-w-6xl mx-auto px-4 py-12 flex flex-col gap-10;
+	background: #f8f9fb;
+}
+
+/* ---- Card ---- */
+
+.team-card {
+	@apply relative rounded-2xl bg-white overflow-hidden;
+	box-shadow: 0 4px 24px rgba(30, 25, 92, 0.08);
+}
+
+.team-card:hover {
+	box-shadow: 0 8px 36px rgba(30, 25, 92, 0.12);
+}
+
+/* Gradient banner at top */
+.team-card-banner {
+	@apply w-full;
+	height: 120px;
+	background: linear-gradient(135deg, var(--color-ian-dark) 0%, var(--color-ian-btn-cta-alt) 100%);
+}
+
+/* ---- Top row: photo + intro side by side ---- */
+
+.team-card-top {
+	@apply flex gap-8 px-8;
+}
+
+/* ---- Photo ---- */
+
+.team-card-photo-col {
+	@apply shrink-0;
+	margin-top: -60px;
+}
+
+.team-card-photo-wrap {
+	@apply rounded-2xl overflow-hidden;
+	width: 220px;
+	height: 260px;
+	border: 4px solid white;
+	box-shadow: 0 8px 24px rgba(30, 25, 92, 0.15);
+}
+
+.team-card-image {
+	@apply w-full h-full object-cover;
+}
+
+/* ---- Intro ---- */
+
+.team-card-intro {
+	@apply flex-1 flex flex-col gap-1.5 pt-4;
+}
+
+.team-card-name {
+	@apply text-2xl md:text-3xl font-bold leading-tight;
+	color: var(--color-ian-dark);
+}
+
+.team-card-title {
+	@apply inline-flex self-start items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full;
+	background: linear-gradient(135deg, rgba(56, 13, 157, 0.1), rgba(30, 25, 92, 0.06));
+	color: var(--color-ian-btn-cta-alt);
+}
+
+.team-card-description {
+	@apply text-sm leading-relaxed mt-2;
+	color: var(--color-ian-muted);
+}
+
+/* ---- Bottom: full-width tabs + content ---- */
+
+.team-card-bottom {
+	@apply px-8 pb-8 pt-6 flex flex-col gap-4;
+}
+
+/* ---- Tabs ---- */
+
+.team-tabs-wrapper {
+	@apply flex flex-col;
+}
+
+.team-tabs {
+	@apply relative flex items-center gap-6;
+}
+
+.team-tab {
+	@apply inline-flex items-center gap-2 pb-3 text-sm font-medium cursor-pointer border-none bg-transparent;
+	color: var(--color-ian-muted);
+	transition: color 0.2s ease;
+	white-space: nowrap;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+}
+
+.team-tab:hover {
+	color: var(--color-ian-dark);
+}
+
+.team-tab-active {
+	color: var(--color-ian-dark);
+	font-weight: 600;
+}
+
+.team-tab-icon {
+	@apply w-4 h-4 shrink-0;
+}
+
+/* Track line behind the sliding indicator */
+.team-tabs-track {
+	@apply relative w-full;
+	height: 2px;
+	background: var(--color-ian-border);
+}
+
+/* Sliding underline indicator */
+.team-tabs-indicator {
+	@apply absolute top-0;
+	height: 2px;
+	background: var(--color-ian-dark);
+	border-radius: 1px;
+	transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Tab content ---- */
+
+.team-tab-panel {
+	@apply rounded-xl p-5;
+	background: #f9fafb;
+	border-left: 3px solid var(--color-ian-btn-cta-alt);
+}
+
+.team-tab-content {
+	@apply list-none p-0 m-0 space-y-3;
+}
+
+.team-tab-item {
+	@apply flex items-start gap-2.5 text-sm leading-relaxed;
+	color: var(--color-ian-text);
+}
+
+.team-tab-item-icon {
+	@apply w-4 h-4 shrink-0 mt-0.5;
+	color: var(--color-ian-btn-cta-alt);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+	.team-card-banner {
+		height: 80px;
+	}
+
+	.team-card-top {
+		@apply flex-col items-center px-5;
+	}
+
+	.team-card-photo-col {
+		margin-top: -40px;
+	}
+
+	.team-card-photo-wrap {
+		width: 160px;
+		height: 200px;
+	}
+
+	.team-card-intro {
+		@apply items-center text-center pt-0;
+	}
+
+	.team-card-title {
+		@apply self-center;
+	}
+
+	.team-card-bottom {
+		@apply px-5 pb-6 pt-4;
+	}
+
+	.team-tabs {
+		@apply gap-4;
+	}
+
+	.team-tab {
+		@apply text-xs gap-1.5 pb-2;
+	}
+
+	.team-tab-panel {
+		@apply p-4;
+		border-left: none;
+		border-top: 3px solid var(--color-ian-btn-cta-alt);
+	}
+
+	.team-tab-item {
+		@apply text-left;
+	}
+}

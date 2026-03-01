@@ -1,0 +1,167 @@
+@reference "tailwindcss";
+
+/* ---- Layout ---- */
+
+.blog-index {
+	@apply max-w-7xl mx-auto px-4 py-10;
+}
+
+.blog-layout {
+	@apply flex gap-10;
+}
+
+.blog-main {
+	@apply flex-1 min-w-0;
+}
+
+.blog-sidebar {
+	@apply w-72 shrink-0;
+}
+
+/* ---- Blog Grid ---- */
+
+.blog-grid {
+	@apply grid grid-cols-1 md:grid-cols-2 gap-6 mb-10;
+}
+
+/* ---- Blog Card ---- */
+
+.blog-card {
+	@apply block bg-white overflow-hidden shadow-sm border border-(--color-ian-border) no-underline transition-shadow duration-200 cursor-pointer;
+}
+
+.blog-card:hover {
+	@apply shadow-md;
+}
+
+.blog-card:hover .blog-card-title {
+	color: var(--color-ian-dark);
+}
+
+.blog-card-image-wrap {
+	@apply relative w-full aspect-[16/10] overflow-hidden bg-gray-100;
+}
+
+.blog-card-image {
+	@apply w-full h-full object-cover transition-transform duration-300;
+}
+
+.blog-card:hover .blog-card-image {
+	@apply scale-105;
+}
+
+.blog-card-categories {
+	@apply flex flex-wrap gap-1.5;
+}
+
+.blog-card-category {
+	@apply text-xs text-white px-2.5 py-0.5 rounded-full;
+	background-color: var(--color-ian-dark);
+}
+
+.blog-card-dots {
+	@apply absolute top-2 right-2 w-8 h-8;
+	background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px);
+	background-size: 6px 6px;
+}
+
+.blog-card-body {
+	@apply p-4 flex flex-col gap-2;
+}
+
+.blog-card-title {
+	@apply text-2xl font-medium text-(--color-ian-text) leading-snug transition-colors duration-200;
+}
+
+.blog-card-excerpt {
+	@apply text-(--color-ian-muted) line-clamp-2;
+}
+
+/* ---- Sidebar ---- */
+
+.blog-sidebar-section {
+	@apply mb-8;
+}
+
+.blog-sidebar-title {
+	@apply text-xl font-bold text-(--color-ian-text) mb-4;
+}
+
+/* ---- Sidebar: Related Posts ---- */
+
+.blog-related-list {
+	@apply flex flex-col gap-4;
+}
+
+.blog-related-item {
+	@apply flex items-center gap-3 no-underline;
+}
+
+.blog-related-image {
+	@apply w-20 h-14 rounded object-cover shrink-0;
+}
+
+.blog-related-text {
+	@apply text-sm text-(--color-ian-text) leading-snug;
+}
+
+.blog-related-item:hover .blog-related-text {
+	color: var(--color-ian-dark);
+}
+
+/* ---- Sidebar: Categories ---- */
+
+.blog-categories-list {
+	@apply list-none p-0 m-0;
+}
+
+.blog-category-row {
+	@apply flex items-center justify-between py-4 border-b border-(--color-ian-border);
+}
+
+.blog-category-row:last-child {
+	@apply border-b-0;
+}
+
+.blog-category-link {
+	@apply font-medium cursor-pointer bg-transparent border-none p-0 text-left;
+	color: var(--color-ian-dark);
+}
+
+.blog-category-link:hover {
+	text-decoration: underline;
+}
+
+.blog-category-link-active {
+	@apply font-bold;
+}
+
+.blog-category-count {
+	@apply text-sm text-(--color-ian-muted);
+}
+
+/* ---- States ---- */
+
+.blog-loading {
+	@apply flex items-center justify-center py-20;
+}
+
+.blog-empty {
+	@apply flex items-center justify-center py-20;
+}
+
+.blog-empty-text {
+	@apply text-base text-(--color-ian-muted);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+	.blog-layout {
+		@apply flex-col;
+	}
+
+	.blog-sidebar {
+		@apply w-full;
+	}
+}

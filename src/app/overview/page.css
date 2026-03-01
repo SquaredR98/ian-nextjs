@@ -1,0 +1,339 @@
+@reference "tailwindcss";
+
+.overview-page {
+  @apply flex flex-col;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Hero Banner
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ov-hero {
+  background: linear-gradient(rgba(30, 25, 92, 0.8), rgba(56, 13, 157, 0.7)),
+    url("/home/innerbanner.jpg") no-repeat center center;
+  background-size: cover;
+  @apply py-20 px-4;
+}
+
+.ov-hero-inner {
+  @apply max-w-3xl mx-auto text-center;
+}
+
+.ov-hero-title {
+  @apply text-3xl md:text-5xl font-bold text-white mb-4 leading-tight;
+}
+
+.ov-hero-subtitle {
+  @apply text-base md:text-lg text-white/85 leading-relaxed mb-8 max-w-2xl mx-auto;
+}
+
+.ov-hero-actions {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4;
+}
+
+.ov-hero-btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-full no-underline transition-all duration-200;
+  background-color: white;
+  color: var(--color-ian-dark);
+}
+
+.ov-hero-btn-primary:hover {
+  @apply shadow-lg scale-105;
+}
+
+.ov-hero-btn-secondary {
+  @apply inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white rounded-full no-underline border-2 border-white/40 transition-all duration-200;
+}
+
+.ov-hero-btn-secondary:hover {
+  @apply bg-white/10 border-white/70;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Stats Bar
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ov-stats {
+  @apply py-0 px-4;
+  background-color: var(--color-ian-dark);
+}
+
+.ov-stats-inner {
+  @apply max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4;
+}
+
+.ov-stat {
+  @apply flex flex-col items-center justify-center py-8 text-center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ov-stat:last-child {
+  border-right: none;
+}
+
+.ov-stat-value {
+  @apply text-2xl md:text-3xl font-bold text-white mb-1;
+}
+
+.ov-stat-label {
+  @apply text-sm text-white/60;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Who We Are
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ov-about {
+  @apply py-20 px-4;
+}
+
+.ov-about-inner {
+  @apply max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12;
+}
+
+.ov-about-image-wrap {
+  @apply flex-1 w-full;
+}
+
+.ov-about-image {
+  @apply w-full max-w-lg h-auto rounded-2xl object-cover shadow-lg;
+}
+
+.ov-about-content {
+  @apply flex-1 flex flex-col gap-4;
+}
+
+.ov-about-label {
+  @apply text-sm font-bold uppercase tracking-widest;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.ov-about-title {
+  @apply text-2xl md:text-3xl font-bold text-(--color-ian-text) leading-snug;
+}
+
+.ov-about-desc {
+  @apply text-base text-(--color-ian-muted) leading-relaxed;
+}
+
+.ov-about-link {
+  @apply inline-flex items-center gap-2 text-sm font-semibold no-underline mt-2 transition-colors duration-200;
+  color: var(--color-ian-dark);
+}
+
+.ov-about-link:hover {
+  color: var(--color-ian-btn-cta-alt);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   What We Offer
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ov-offer {
+  @apply py-20 px-4;
+  background-color: var(--color-ian-bg-light);
+}
+
+.ov-offer-inner {
+  @apply max-w-6xl mx-auto text-center;
+}
+
+.ov-offer-label {
+  @apply text-sm font-bold uppercase tracking-widest;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.ov-offer-title {
+  @apply text-2xl md:text-3xl font-bold text-(--color-ian-text) mt-3 mb-3;
+}
+
+.ov-offer-subtitle {
+  @apply text-base text-(--color-ian-muted) max-w-2xl mx-auto mb-12;
+}
+
+.ov-offer-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.ov-offer-card {
+  @apply flex flex-col items-center text-center bg-white rounded-2xl p-8 no-underline border border-(--color-ian-border) transition-all duration-300;
+}
+
+.ov-offer-card:hover {
+  @apply shadow-xl -translate-y-1;
+  border-color: var(--color-ian-dark);
+}
+
+.ov-offer-card-icon-wrap {
+  @apply w-16 h-16 rounded-full flex items-center justify-center mb-5;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
+}
+
+.ov-offer-card-icon {
+  @apply w-7 h-7 text-white;
+}
+
+.ov-offer-card-title {
+  @apply text-lg font-bold text-(--color-ian-text) mb-3;
+}
+
+.ov-offer-card-desc {
+  @apply text-sm text-(--color-ian-muted) leading-relaxed mb-4;
+}
+
+.ov-offer-card-cta {
+  @apply inline-flex items-center gap-1 text-sm font-semibold mt-auto transition-colors duration-200;
+  color: var(--color-ian-dark);
+}
+
+.ov-offer-card:hover .ov-offer-card-cta {
+  color: var(--color-ian-btn-cta-alt);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Digital Marketing
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ov-mkt {
+  @apply py-20 px-4;
+}
+
+.ov-mkt-inner {
+  @apply max-w-6xl mx-auto;
+}
+
+.ov-mkt-header {
+  @apply flex flex-col lg:flex-row items-center gap-12 mb-14;
+}
+
+.ov-mkt-header-text {
+  @apply flex-1 flex flex-col gap-4;
+}
+
+.ov-mkt-label {
+  @apply text-sm font-bold uppercase tracking-widest;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.ov-mkt-title {
+  @apply text-2xl md:text-3xl font-bold text-(--color-ian-text) leading-snug;
+}
+
+.ov-mkt-desc {
+  @apply text-base text-(--color-ian-muted) leading-relaxed;
+}
+
+.ov-mkt-header-image-wrap {
+  @apply flex-1 w-full;
+}
+
+.ov-mkt-header-image {
+  @apply w-full max-w-md h-auto rounded-2xl object-cover shadow-lg;
+}
+
+.ov-mkt-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+.ov-mkt-card {
+  @apply flex flex-col bg-(--color-ian-bg-light) rounded-xl p-6 transition-all duration-300;
+}
+
+.ov-mkt-card:hover {
+  @apply shadow-md -translate-y-1;
+}
+
+.ov-mkt-card-icon-wrap {
+  @apply w-12 h-12 rounded-lg flex items-center justify-center mb-4;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
+}
+
+.ov-mkt-card-icon {
+  @apply w-5 h-5 text-white;
+}
+
+.ov-mkt-card-title {
+  @apply text-base font-bold text-(--color-ian-text) mb-2;
+}
+
+.ov-mkt-card-desc {
+  @apply text-sm text-(--color-ian-muted) leading-relaxed;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CTA Banner
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ov-cta {
+  background: linear-gradient(135deg, var(--color-ian-dark) 0%, #380d9d 100%);
+  @apply py-16 px-4;
+}
+
+.ov-cta-inner {
+  @apply max-w-3xl mx-auto text-center;
+}
+
+.ov-cta-title {
+  @apply text-2xl md:text-3xl font-bold text-white mb-3;
+}
+
+.ov-cta-desc {
+  @apply text-base text-white/80 mb-8;
+}
+
+.ov-cta-actions {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4;
+}
+
+.ov-cta-btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-full no-underline transition-all duration-200;
+  background-color: white;
+  color: var(--color-ian-dark);
+}
+
+.ov-cta-btn-primary:hover {
+  @apply shadow-lg scale-105;
+}
+
+.ov-cta-btn-secondary {
+  @apply inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white rounded-full no-underline border-2 border-white/40 transition-all duration-200;
+}
+
+.ov-cta-btn-secondary:hover {
+  @apply bg-white/10 border-white/70;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .ov-hero {
+    @apply py-14;
+  }
+
+  .ov-hero-title {
+    @apply text-2xl;
+  }
+
+  .ov-about-inner {
+    @apply flex-col;
+  }
+
+  .ov-mkt-header {
+    @apply flex-col;
+  }
+
+  .ov-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .ov-stat:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .ov-stat:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+}

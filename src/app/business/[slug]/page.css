@@ -1,0 +1,377 @@
+@reference "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Page layout                                                        */
+/* ------------------------------------------------------------------ */
+
+.provider-page {
+  @apply flex flex-col;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Hero section                                                       */
+/* ------------------------------------------------------------------ */
+
+.provider-hero {
+  @apply py-6;
+  background: linear-gradient(135deg, #f0f0ff 0%, #f5f7fe 50%, #eef6ff 100%);
+  border-bottom: 1px solid var(--color-ian-border);
+}
+
+.provider-hero-inner {
+  @apply max-w-7xl mx-auto px-4 flex flex-col items-center gap-5 sm:flex-row sm:items-start sm:gap-6;
+}
+
+.provider-hero-logo-wrap {
+  @apply w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-white;
+  box-shadow: 0 2px 12px rgba(30, 25, 92, 0.12);
+  border: 2px solid #fff;
+}
+
+.provider-hero-logo {
+  @apply w-full h-full object-cover;
+}
+
+.provider-hero-info {
+  @apply flex flex-col gap-1.5 flex-1;
+}
+
+.provider-hero-badges {
+  @apply flex flex-wrap gap-2;
+}
+
+.provider-hero-badges a {
+  @apply no-underline;
+}
+
+.provider-hero-name {
+  @apply text-xl font-bold sm:text-2xl;
+  color: var(--color-ian-dark);
+}
+
+/* Contact grid — single row */
+.provider-hero-contact-grid {
+  @apply flex flex-wrap items-end gap-x-6 gap-y-2 mt-1;
+}
+
+.provider-hero-contact-item h6 {
+  @apply text-xs font-semibold mb-0;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.provider-hero-contact-item p {
+  @apply text-sm font-medium mt-0.5;
+  color: var(--color-ian-text);
+}
+
+.provider-hero-btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wide rounded-lg border-none no-underline transition-all;
+  color: var(--color-ian-dark-alt);
+  background: rgba(39, 35, 94, 0.08);
+}
+
+.provider-hero-btn:hover {
+  background: rgba(39, 35, 94, 0.16);
+  transform: translateY(-1px);
+}
+
+/* Footer row: verified + social */
+.provider-hero-footer {
+  @apply flex flex-wrap items-center gap-4 mt-3 pt-3 border-t border-gray-200;
+}
+
+.provider-hero-verified {
+  @apply flex items-center gap-2;
+}
+
+.provider-hero-verified-img {
+  @apply h-8 w-auto;
+}
+
+.provider-hero-verified span {
+  @apply text-xs uppercase tracking-widest font-bold;
+  color: var(--color-ian-success);
+}
+
+.provider-hero-social {
+  @apply flex items-center gap-2.5;
+}
+
+.provider-hero-social-link {
+  @apply inline-flex hover:opacity-80 transition-opacity;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* ------------------------------------------------------------------ */
+/*  Two-column layout                                                  */
+/* ------------------------------------------------------------------ */
+
+.provider-layout {
+  @apply max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-6;
+}
+
+.provider-main {
+  @apply w-full lg:w-[58%] min-w-0 flex flex-col gap-6;
+}
+
+.provider-sidebar {
+  @apply w-full lg:w-[42%] flex-shrink-0 flex flex-col gap-6;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Card sections (about, reviews, video, gallery, related)            */
+/* ------------------------------------------------------------------ */
+
+.card-section {
+  @apply rounded-xl border bg-white p-5 sm:p-6;
+  border-color: var(--color-ian-border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.provider-section-title {
+  @apply text-lg font-bold mb-4 pb-2 border-b;
+  color: var(--color-ian-dark);
+  border-color: var(--color-ian-border);
+}
+
+/* ------------------------------------------------------------------ */
+/*  About                                                              */
+/* ------------------------------------------------------------------ */
+
+.provider-about-text {
+  @apply leading-relaxed text-sm;
+  color: var(--color-ian-text);
+}
+
+.provider-about-links {
+  @apply flex flex-wrap gap-3 mt-4;
+}
+
+.provider-about-link {
+  @apply inline-flex items-center gap-1.5 text-sm font-medium no-underline transition-colors;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.provider-about-link:hover {
+  color: var(--color-ian-dark);
+}
+
+.provider-about-rating {
+  @apply mt-4 pt-3 border-t;
+  border-color: var(--color-ian-border);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Languages & Services                                               */
+/* ------------------------------------------------------------------ */
+
+.provider-lists {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-5;
+}
+
+.provider-list-col {
+  @apply flex flex-col gap-2;
+}
+
+.provider-list-title {
+  @apply text-sm font-bold uppercase tracking-wide;
+  color: var(--color-ian-btn-cta-alt);
+}
+
+.provider-list-items {
+  @apply text-sm leading-relaxed;
+  color: var(--color-ian-text);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Google Reviews                                                     */
+/* ------------------------------------------------------------------ */
+
+.provider-reviews {
+  @apply flex flex-col;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Video                                                              */
+/* ------------------------------------------------------------------ */
+
+.provider-video-wrap {
+  @apply relative w-full overflow-hidden rounded-lg;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.provider-video-iframe {
+  @apply w-full rounded-lg border-0;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Photo Gallery                                                      */
+/* ------------------------------------------------------------------ */
+
+.provider-gallery {
+  @apply flex flex-col;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Related Providers                                                  */
+/* ------------------------------------------------------------------ */
+
+.provider-related {
+  @apply flex flex-col;
+}
+
+/* Override carousel slide widths inside the related section —
+   the parent column is already narrow (58%), so slides need to
+   be wider than the global default.                                  */
+.provider-related .embla-slide {
+  @apply flex-[0_0_100%];
+}
+
+@media (min-width: 640px) {
+  .provider-related .embla-slide {
+    @apply flex-[0_0_50%];
+  }
+}
+
+/* Card inside carousel: stack vertically for better fit */
+.provider-related .provider-card {
+  @apply flex-col items-center text-center gap-3 h-full;
+}
+
+.provider-related .provider-card-logo-wrap {
+  @apply w-16 h-16;
+}
+
+.provider-related .provider-card-info {
+  @apply items-center w-full;
+}
+
+.provider-related .provider-card-name {
+  @apply text-sm whitespace-normal line-clamp-2;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Sidebar CTA — "Become an I.A.N. provider Today"                    */
+/* ------------------------------------------------------------------ */
+
+.provider-sidebar-cta {
+  @apply rounded-xl p-6;
+  background: linear-gradient(160deg, #f0f0ff 0%, #f5f7fe 100%);
+  border: 1px solid var(--color-ian-border);
+}
+
+.provider-sidebar-cta-title {
+  @apply text-xl font-bold mb-4;
+  color: var(--color-ian-dark);
+}
+
+.provider-sidebar-cta-desc {
+  @apply text-sm leading-relaxed mb-3;
+  color: var(--color-ian-muted);
+}
+
+.provider-sidebar-cta-desc strong {
+  @apply font-bold;
+  color: var(--color-ian-dark);
+}
+
+.provider-sidebar-cta-btn {
+  @apply inline-block px-5 py-2.5 text-sm font-semibold uppercase tracking-wider rounded-lg no-underline transition-all;
+  color: #fff;
+  background: var(--color-ian-dark);
+}
+
+.provider-sidebar-cta-btn:hover {
+  background: var(--color-ian-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 25, 92, 0.25);
+}
+
+.provider-sidebar-cta-divider {
+  @apply my-5;
+  border: none;
+  border-top: 1px solid var(--color-ian-border);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Sticky bottom bar                                                  */
+/* ------------------------------------------------------------------ */
+
+.provider-sticky-bar {
+  @apply fixed bottom-0 left-0 right-0 z-50 transition-all duration-300;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--color-ian-border);
+}
+
+.provider-sticky-inner {
+  @apply max-w-7xl mx-auto px-4 py-3 flex items-center gap-4;
+}
+
+.provider-sticky-logo-wrap {
+  @apply hidden md:block w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.provider-sticky-logo {
+  @apply w-full h-full object-cover;
+}
+
+.provider-sticky-info {
+  @apply flex-1 min-w-0;
+}
+
+.provider-sticky-name {
+  @apply text-base font-bold truncate;
+  color: var(--color-ian-dark);
+}
+
+.provider-sticky-location {
+  @apply text-xs hidden md:block;
+  color: var(--color-ian-muted);
+}
+
+.provider-sticky-actions {
+  @apply flex items-center gap-2;
+}
+
+.provider-sticky-btn {
+  @apply inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg text-white no-underline transition-all;
+  background: var(--color-ian-dark);
+}
+
+.provider-sticky-btn:hover {
+  background: var(--color-ian-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(30, 25, 92, 0.3);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Responsive                                                         */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  .provider-hero-inner {
+    @apply flex-col items-center text-center;
+  }
+
+  .provider-hero-badges {
+    @apply justify-center;
+  }
+
+  .provider-hero-footer {
+    @apply justify-center;
+  }
+
+  .provider-hero-contact-grid {
+    @apply flex-col items-center;
+  }
+
+  .provider-sticky-actions {
+    @apply flex-col;
+  }
+}

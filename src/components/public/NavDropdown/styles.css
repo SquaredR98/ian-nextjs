@@ -1,0 +1,41 @@
+@reference "tailwindcss";
+
+.nav-dropdown {
+  @apply relative;
+}
+
+.nav-dropdown-trigger {
+  @apply inline-flex items-center gap-1 px-2 py-2 text-sm text-(--color-ian-text) transition-colors cursor-pointer bg-transparent border-none whitespace-nowrap;
+}
+
+.nav-dropdown-trigger:hover {
+  color: var(--color-ian-dark);
+}
+
+.nav-dropdown-icon {
+  @apply w-3.5 h-3.5 transition-transform duration-200;
+}
+
+.nav-dropdown-icon-open {
+  @apply rotate-180;
+}
+
+/* Dropdown menu — hidden by default, visible via class toggle */
+.nav-dropdown-menu {
+  @apply absolute top-full left-0 z-50 min-w-[200px] bg-white rounded-md py-2 opacity-0 invisible transition-all duration-150;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.nav-dropdown-menu-open {
+  @apply opacity-100 visible;
+}
+
+.nav-dropdown-item {
+  @apply block px-5 py-2.5 text-sm text-(--color-ian-text) no-underline transition-colors whitespace-nowrap;
+}
+
+.nav-dropdown-item:hover {
+  @apply bg-(--color-ian-bg-light);
+  color: var(--color-ian-dark);
+}

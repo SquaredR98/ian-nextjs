@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.featured-providers {
+  @apply py-12 px-4 max-w-6xl mx-auto;
+}
+
+.featured-providers-title {
+  @apply text-2xl font-bold text-(--color-ian-text) text-center mb-2;
+}
+
+.featured-providers-subtitle {
+  @apply text-sm text-(--color-ian-muted) text-center mb-8;
+}
+
+.featured-providers-loading {
+  @apply flex justify-center py-12;
+}

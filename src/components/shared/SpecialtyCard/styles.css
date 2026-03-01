@@ -1,0 +1,16 @@
+@reference "tailwindcss";
+.specialty-card {
+  @apply flex flex-col items-center gap-3 p-4 rounded-lg border border-[var(--color-ian-border)] bg-white hover:shadow-md transition-shadow text-center no-underline cursor-pointer;
+}
+
+.specialty-card-image-wrap {
+  @apply w-full aspect-[3/2] rounded overflow-hidden bg-gray-100;
+}
+
+.specialty-card-image {
+  @apply w-full h-full object-cover;
+}
+
+.specialty-card-title {
+  @apply text-sm font-medium text-[var(--color-ian-text)];
+}
