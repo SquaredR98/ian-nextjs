@@ -2,8 +2,9 @@ module.exports = {
   apps: [
     {
       name: "ian-nextjs",
-      script: "node_modules/.bin/next",
+      script: "node_modules/next/dist/bin/next",
       args: "start -p 3000",
+      interpreter: "node",
       cwd: __dirname,
       instances: 1,
       exec_mode: "fork",
