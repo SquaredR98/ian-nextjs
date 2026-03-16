@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import useSWR from "swr";
 import type { Provider } from "@/lib/types";
 import { ProviderCard } from "@/components/shared/ProviderCard";
@@ -17,10 +18,45 @@ async function fetchFeaturedProviders(): Promise<Provider[]> {
 }
 
 export function FeaturedProviders() {
-	const { data: providers, isLoading } = useSWR(
-		"featured-providers",
+	const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
+	const [geoAttempted, setGeoAttempted] = useState(false);
+
+	// Request browser geolocation on mount
+	useEffect(() => {
+		if (!navigator.geolocation) {
+			setGeoAttempted(true);
+			return;
+		}
+		navigator.geolocation.getCurrentPosition(
+			(pos) => {
+				setCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+				setGeoAttempted(true);
+			},
+			() => {
+				// Denied or unavailable — fall back to featured specialities
+				setGeoAttempted(true);
+			},
+			{ timeout: 8000 },
+		);
+	}, []);
+
+	// Fetch boosted providers when we have coordinates
+	const { data: boostedProviders, isLoading: boostLoading } = useSWR(
+		coords ? `boost-${coords.lat}-${coords.lng}` : null,
+		() => providersApi.boost(coords!.lat, coords!.lng).then((r) => r.data),
+	);
+
+	// Fallback: featured specialities (only fetch if no coords or boost returned empty)
+	const shouldFallback = geoAttempted && (!coords || (boostedProviders && boostedProviders.length === 0));
+	const { data: fallbackProviders, isLoading: fallbackLoading } = useSWR(
+		shouldFallback ? "featured-providers" : null,
 		fetchFeaturedProviders,
 	);
+
+	const providers = boostedProviders && boostedProviders.length > 0
+		? boostedProviders
+		: fallbackProviders;
+	const isLoading = !geoAttempted || boostLoading || (shouldFallback && fallbackLoading);
 
 	return (
 		<section className="featured-providers">

@@ -188,6 +188,66 @@ export function normalizeProvider(raw: RawProviderSearch): Provider {
 	};
 }
 
+// ─── Boosted Provider (from POST /boost raw SQL) ─────────────────────
+
+interface RawBoostedProvider {
+	// from ic_businesses
+	id: number;
+	slug: string;
+	business_name: string;
+	picture: string | null;
+	phone: string | null;
+	website_url: string | null;
+	// from ic_business_details
+	formatted_address: string | null;
+	review_json: string | null;
+	latitude: string | number | null;
+	longitude: string | number | null;
+	google_my_business_link: string | null;
+	// from JOINs
+	category_name: string | null;
+	provider_name: string | null;
+	profile_picture: string | null;
+	city_name: string | null;
+	state_name: string | null;
+	[key: string]: unknown;
+}
+
+function mapCategoryName(name: string | null): "medical" | "legal" | "service" {
+	if (!name) return "medical";
+	const lower = name.toLowerCase();
+	if (lower.includes("legal") || lower.includes("attorney")) return "legal";
+	if (lower.includes("service")) return "service";
+	return "medical";
+}
+
+export function normalizeBoostedProvider(raw: RawBoostedProvider): Provider {
+	const { rating, reviewCount } = parseReviewJson(raw.review_json);
+	const { city, state } = raw.city_name || raw.state_name
+		? { city: raw.city_name || "", state: raw.state_name || "" }
+		: extractCityState(raw.formatted_address);
+
+	return {
+		id: raw.id,
+		slug: raw.slug || "",
+		business_name: raw.business_name || "",
+		category: mapCategoryName(raw.category_name),
+		specialty: (raw.category_name as string) || "",
+		city,
+		state,
+		logo_url: raw.picture || "",
+		rating,
+		review_count: reviewCount,
+		is_verified: true,
+		latitude: raw.latitude != null ? Number(raw.latitude) : undefined,
+		longitude: raw.longitude != null ? Number(raw.longitude) : undefined,
+		phone: raw.phone || undefined,
+		website: raw.website_url || undefined,
+		address: raw.formatted_address || undefined,
+		google_maps_link: raw.google_my_business_link || undefined,
+	};
+}
+
 // ─── Featured Speciality → Provider (best effort) ───────────────────
 
 interface RawFeaturedSpeciality {

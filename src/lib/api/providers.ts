@@ -2,7 +2,7 @@ import { apiClient } from "./client";
 import { apiConfig, apiPath } from "./config";
 import type { Provider, ProviderDetail } from "@/lib/types";
 import type { PaginatedResponse } from "@/lib/types";
-import { normalizeProvider, normalizeFeaturedSpeciality, normalizeProviderDetail } from "./normalizers";
+import { normalizeProvider, normalizeFeaturedSpeciality, normalizeBoostedProvider, normalizeProviderDetail } from "./normalizers";
 
 export const providersApi = {
 	getFeatured: async (): Promise<{ data: Provider[] }> => {
@@ -21,11 +21,17 @@ export const providersApi = {
 		};
 	},
 
-	boost: (latitude: number, longitude: number) =>
-		apiClient.post<{ data: Provider[]; rotate: { id: number[]; state: number[] } }>(
+	boost: async (latitude: number, longitude: number): Promise<{ data: Provider[] }> => {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		const raw = await apiClient.post<{ data: any[] }>(
 			apiPath("/api/providers/boost", "/boost"),
 			{ latitude, longitude },
-		),
+		);
+		const rows = raw.data ?? [];
+		return {
+			data: Array.isArray(rows) ? rows.map(normalizeBoostedProvider) : [],
+		};
+	},
 
 	search: async (params: {
 		categoryId?: string;
