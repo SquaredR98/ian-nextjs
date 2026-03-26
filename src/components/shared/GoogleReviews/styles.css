@@ -4,27 +4,43 @@
 }
 
 .google-reviews-header {
-  @apply flex items-center gap-2;
+  @apply flex items-center justify-between p-4 rounded-lg mb-2;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f0fe 100%);
+  border: 1px solid var(--color-ian-border);
 }
 
-.google-reviews-icon {
-  @apply w-6 h-6;
+.google-reviews-header-score {
+  @apply flex items-center gap-3;
 }
 
 .google-reviews-score {
-  @apply text-lg font-bold text-[var(--color-ian-text)];
+  @apply text-3xl font-bold;
+  color: var(--color-ian-text);
+}
+
+.google-reviews-header-details {
+  @apply flex flex-col gap-0.5;
 }
 
 .google-reviews-count {
-  @apply text-sm text-[var(--color-ian-muted)];
+  @apply text-xs;
+  color: var(--color-ian-muted);
 }
 
-.google-reviews-list {
-  @apply flex flex-col gap-3;
+.google-reviews-logo {
+  @apply h-7 w-auto;
+}
+
+.google-reviews-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3;
 }
 
 .google-review-card {
-  @apply p-4 rounded-lg border border-[var(--color-ian-border)] bg-[var(--color-ian-bg-light)];
+  @apply p-4 rounded-lg border border-[var(--color-ian-border)] bg-white transition-shadow;
+}
+
+.google-review-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .google-review-card-header {
@@ -44,7 +60,7 @@
 }
 
 .google-review-text {
-  @apply text-sm text-[var(--color-ian-muted)] leading-relaxed;
+  @apply text-sm text-[var(--color-ian-muted)] leading-relaxed line-clamp-4;
 }
 
 .google-review-time {

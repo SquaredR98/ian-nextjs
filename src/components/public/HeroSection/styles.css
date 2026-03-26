@@ -7,8 +7,15 @@
 }
 
 .hero-content {
-  @apply relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24;
-  max-width: 60%;
+  @apply relative z-10 py-16 lg:py-24;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 3rem;
+  padding-right: 1rem;
+}
+
+.hero-content-inner {
+  max-width: 55%;
 }
 
 .hero-subtitle {
@@ -26,6 +33,10 @@
 /* Responsive - on smaller screens allow full width */
 @media (max-width: 1023px) {
   .hero-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .hero-content-inner {
     max-width: 100%;
   }
 }

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "See endorsements from trusted attorneys and law firms in our network.",
 };
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export default async function AttorneyEndorsementPage() {
   const res = await endorsementsApi.getAll();
   const endorsements = res.data ?? [];

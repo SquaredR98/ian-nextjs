@@ -4,7 +4,9 @@ import { apiPath } from "./config";
 interface ContactFormData {
 	name: string;
 	email: string;
-	phone: string;
+	phone?: string;
+	role?: string;
+	category?: string;
 	message: string;
 }
 

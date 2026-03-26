@@ -8,6 +8,8 @@ import { CreateProfileCTA } from "@/components/public/CreateProfileCTA";
 import { TestimonialsSection } from "@/components/public/TestimonialsSection";
 import { specialtiesApi } from "@/lib/api";
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export default async function HomePage() {
   const { data: featuredSpecialties } = await specialtiesApi.getFeatured();
 

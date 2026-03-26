@@ -93,10 +93,12 @@
 
 .ov-about-image-wrap {
   @apply flex-1 w-full;
+  max-width: 420px;
 }
 
 .ov-about-image {
-  @apply w-full max-w-lg h-auto rounded-2xl object-cover shadow-lg;
+  @apply w-full h-auto rounded-2xl object-cover shadow-lg;
+  max-height: 320px;
 }
 
 .ov-about-content {

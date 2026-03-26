@@ -44,37 +44,27 @@ export function ProviderHero({ provider }: { provider: ProviderDetail & { id: nu
 
           <h1 className="provider-hero-name">{provider.business_name}</h1>
 
-          <div className="provider-hero-contact-grid">
-            <div className="provider-hero-contact-item">
-              <h6>Address</h6>
-              <p>{provider.address}</p>
-            </div>
-            <div className="provider-hero-contact-item">
-              <h6>City</h6>
-              <p>{provider.city}</p>
-            </div>
-            <div className="provider-hero-contact-item">
-              <h6>Zipcode</h6>
-              <p>{provider.zipcode || "—"}</p>
-            </div>
+          <p className="provider-hero-address">
+            {[provider.address, provider.city, provider.state, provider.zipcode]
+              .filter(Boolean)
+              .join(", ")}
+          </p>
+
+          <div className="provider-hero-actions">
             {provider.website && (
-              <div className="provider-hero-contact-item">
-                <a
-                  href={provider.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="provider-hero-btn"
-                >
-                  <Globe size={14} /> Website
-                </a>
-              </div>
+              <a
+                href={provider.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="provider-hero-btn"
+              >
+                <Globe size={14} /> Website
+              </a>
             )}
             {provider.phone && (
-              <div className="provider-hero-contact-item">
-                <a href={`tel:${provider.phone}`} className="provider-hero-btn">
-                  <Phone size={14} /> {provider.phone}
-                </a>
-              </div>
+              <a href={`tel:${provider.phone}`} className="provider-hero-btn">
+                <Phone size={14} /> {provider.phone}
+              </a>
             )}
           </div>
 
@@ -112,7 +102,7 @@ export function ProviderLists({
   specialties: { id: number; name: string; category_id: number }[];
 }) {
   return (
-    <section className="provider-lists card-section">
+    <section className="provider-lists">
       {languages.length > 0 && (
         <div className="provider-list-col">
           <h4 className="provider-list-title">Languages</h4>
@@ -123,11 +113,7 @@ export function ProviderLists({
         <div className="provider-list-col">
           <h4 className="provider-list-title">Services Provided</h4>
           <p className="provider-list-items">
-            {specialties.map((spec, i) => (
-              <span key={spec.id}>
-                {i > 0 && <br />}- {spec.name}
-              </span>
-            ))}
+            {specialties.map((spec) => spec.name).join(", ")}
           </p>
         </div>
       )}

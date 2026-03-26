@@ -23,7 +23,7 @@ export function GoogleReviews({
         overallRating={overallRating}
         reviewCount={reviews.length}
       />
-      <div className="google-reviews-list">
+      <div className="google-reviews-grid">
         {reviews.map((review, i) => (
           <ReviewCard key={i} review={review} />
         ))}
@@ -42,17 +42,23 @@ function GoogleReviewsHeader({
 }) {
   return (
     <div className="google-reviews-header">
+      <div className="google-reviews-header-score">
+        <span className="google-reviews-score">{overallRating.toFixed(1)}</span>
+        <div className="google-reviews-header-details">
+          <RatingStars rating={Math.round(overallRating)} />
+          <span className="google-reviews-count">
+            Based on {reviewCount} review{reviewCount !== 1 ? "s" : ""}
+          </span>
+        </div>
+      </div>
       <FallbackImage
         src="/images/g-reviews.png"
         alt="Google Reviews"
-        width={24}
-        height={24}
-        className="google-reviews-icon"
+        width={80}
+        height={28}
+        className="google-reviews-logo"
         fallbackType="generic"
       />
-      <span className="google-reviews-score">{overallRating.toFixed(1)}</span>
-      <RatingStars rating={Math.round(overallRating)} />
-      <span className="google-reviews-count">({reviewCount} reviews)</span>
     </div>
   );
 }

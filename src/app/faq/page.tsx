@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Find answers to commonly asked questions about Injury Assistance Network.",
 };
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export default async function FAQPage() {
   const res = await faqApi.getAll("null");
   const items = res.data ?? [];

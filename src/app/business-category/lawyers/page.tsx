@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Find experienced personal injury attorneys and law firms in your area.",
 };
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export default async function LawyersPage() {
   const [specRes, faqRes] = await Promise.all([
     specialtiesApi.getAll("2"),

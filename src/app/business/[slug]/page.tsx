@@ -14,6 +14,8 @@ import {
 } from "@/components/public/ProviderProfileContent";
 import "./page.css";
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -70,11 +72,12 @@ export default async function ProviderProfilePage({
         <ProviderHero provider={provider} />
         <div className="provider-layout">
           <div className="provider-main">
-            <ProviderLists
-              languages={provider.languages}
-              specialties={provider.specialties}
-            />
-            <ProviderProfileContent provider={provider} relatedProviders={relatedProviders} />
+            <ProviderProfileContent provider={provider} relatedProviders={relatedProviders}>
+              <ProviderLists
+                languages={provider.languages}
+                specialties={provider.specialties}
+              />
+            </ProviderProfileContent>
           </div>
           <div className="provider-sidebar">
             <ProviderSidebar provider={provider} />

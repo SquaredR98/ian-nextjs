@@ -24,7 +24,7 @@ export interface BlogCommentPayload {
 }
 
 export const blogApi = {
-	getPosts: async (params?: { page?: number; category?: string }): Promise<PaginatedResponse<BlogPost>> => {
+	getPosts: async (params?: { page?: number; category?: string; perPage?: number }): Promise<PaginatedResponse<BlogPost>> => {
 		if (apiConfig.mode === "mock") {
 			return apiClient.get<PaginatedResponse<BlogPost>>(
 				apiPath("/api/blog", "/blogs"),

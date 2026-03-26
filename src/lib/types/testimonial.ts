@@ -4,4 +4,5 @@ export interface Testimonial {
   text: string;
   photo_url: string;
   rating: number;
+  source?: "google" | "manual";
 }

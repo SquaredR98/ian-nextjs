@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Meet the team behind Injury Assistance Network.",
 };
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export default async function OurTeamPage() {
   const { data: members } = await teamApi.getAll();
 

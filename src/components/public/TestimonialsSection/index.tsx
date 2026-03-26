@@ -167,17 +167,21 @@ function TestimonialCard({
           )}
           <div className="testimonial-card-author-info">
             <span className="testimonial-card-name">{author_name}</span>
-            <span className="testimonial-card-verified">Verified Client</span>
+            <span className="testimonial-card-verified">
+              {testimonial.source === "google" ? "Google Review" : "Verified Client"}
+            </span>
           </div>
         </div>
-        <FallbackImage
-          src="/images/google-logo.svg"
-          alt="Google Review"
-          width={28}
-          height={28}
-          className="testimonial-card-google"
-          fallbackType="generic"
-        />
+        {testimonial.source === "google" && (
+          <FallbackImage
+            src="/images/google-logo.svg"
+            alt="Google Review"
+            width={28}
+            height={28}
+            className="testimonial-card-google"
+            fallbackType="generic"
+          />
+        )}
       </div>
     </div>
   );

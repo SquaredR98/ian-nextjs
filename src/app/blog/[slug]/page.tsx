@@ -8,6 +8,8 @@ import { PostFeaturedImage, PostHeader, PostContent, PostShareButtons, RelatedPo
 import { BlogCommentForm } from "@/components/public/BlogCommentForm";
 import "./page.css";
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { ContactUsContent } from "@/components/public/ContactUsPage";
 import "./page.css";
 
@@ -10,15 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactUsPage() {
-  return (
-    <>
-      <Breadcrumb
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Contact Us" },
-        ]}
-      />
-      <ContactUsContent />
-    </>
-  );
+  return <ContactUsContent />;
 }

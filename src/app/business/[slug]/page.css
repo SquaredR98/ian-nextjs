@@ -49,19 +49,15 @@
   color: var(--color-ian-dark);
 }
 
-/* Contact grid — single row */
-.provider-hero-contact-grid {
-  @apply flex flex-wrap items-end gap-x-6 gap-y-2 mt-1;
+/* Address line */
+.provider-hero-address {
+  @apply text-sm mt-1;
+  color: var(--color-ian-muted);
 }
 
-.provider-hero-contact-item h6 {
-  @apply text-xs font-semibold mb-0;
-  color: var(--color-ian-btn-cta-alt);
-}
-
-.provider-hero-contact-item p {
-  @apply text-sm font-medium mt-0.5;
-  color: var(--color-ian-text);
+/* Action buttons row */
+.provider-hero-actions {
+  @apply flex flex-wrap items-center gap-3 mt-2;
 }
 
 .provider-hero-btn {
@@ -111,11 +107,11 @@
 }
 
 .provider-main {
-  @apply w-full lg:w-[58%] min-w-0 flex flex-col gap-6;
+  @apply w-full lg:w-[65%] min-w-0 flex flex-col gap-6;
 }
 
 .provider-sidebar {
-  @apply w-full lg:w-[42%] flex-shrink-0 flex flex-col gap-6;
+  @apply w-full lg:w-[35%] flex-shrink-0 flex flex-col gap-6;
 }
 
 /* ------------------------------------------------------------------ */
@@ -125,7 +121,7 @@
 .card-section {
   @apply rounded-xl border bg-white p-5 sm:p-6;
   border-color: var(--color-ian-border);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .provider-section-title {
@@ -143,30 +139,13 @@
   color: var(--color-ian-text);
 }
 
-.provider-about-links {
-  @apply flex flex-wrap gap-3 mt-4;
-}
-
-.provider-about-link {
-  @apply inline-flex items-center gap-1.5 text-sm font-medium no-underline transition-colors;
-  color: var(--color-ian-btn-cta-alt);
-}
-
-.provider-about-link:hover {
-  color: var(--color-ian-dark);
-}
-
-.provider-about-rating {
-  @apply mt-4 pt-3 border-t;
-  border-color: var(--color-ian-border);
-}
 
 /* ------------------------------------------------------------------ */
 /*  Languages & Services                                               */
 /* ------------------------------------------------------------------ */
 
 .provider-lists {
-  @apply grid grid-cols-1 sm:grid-cols-2 gap-5;
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 px-1;
 }
 
 .provider-list-col {
@@ -289,12 +268,6 @@
   box-shadow: 0 4px 12px rgba(30, 25, 92, 0.25);
 }
 
-.provider-sidebar-cta-divider {
-  @apply my-5;
-  border: none;
-  border-top: 1px solid var(--color-ian-border);
-}
-
 /* ------------------------------------------------------------------ */
 /*  Sticky bottom bar                                                  */
 /* ------------------------------------------------------------------ */
@@ -367,8 +340,12 @@
     @apply justify-center;
   }
 
-  .provider-hero-contact-grid {
-    @apply flex-col items-center;
+  .provider-hero-address {
+    @apply text-center;
+  }
+
+  .provider-hero-actions {
+    @apply justify-center;
   }
 
   .provider-sticky-actions {

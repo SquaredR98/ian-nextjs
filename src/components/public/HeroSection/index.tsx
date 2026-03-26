@@ -14,16 +14,18 @@ export function HeroSection() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <p className="hero-subtitle">
-          Connect With Your <WordRotator words={ROTATING_WORDS} />
-        </p>
-        <h1 className="hero-title">
-          MEET I.A.N. YOUR PERSONAL
-          <br />
-          INJURY CONCIERGE
-        </h1>
-        <div className="hero-search">
-          <SearchBar />
+        <div className="hero-content-inner">
+          <p className="hero-subtitle">
+            Connect With Your <WordRotator words={ROTATING_WORDS} />
+          </p>
+          <h1 className="hero-title">
+            MEET I.A.N. YOUR PERSONAL
+            <br />
+            INJURY CONCIERGE
+          </h1>
+          <div className="hero-search">
+            <SearchBar />
+          </div>
         </div>
       </div>
     </section>

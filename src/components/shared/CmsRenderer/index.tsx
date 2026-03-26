@@ -57,7 +57,7 @@ export function CmsRenderer({ content, className = "legal-page-content" }: CmsRe
           case "subheading":
             return <h3 key={section.id}>{section.content}</h3>;
           case "paragraph":
-            return <p key={section.id}>{section.content}</p>;
+            return <p key={section.id} style={{ whiteSpace: "pre-wrap" }}>{section.content}</p>;
           case "list":
             return (
               <ul key={section.id}>

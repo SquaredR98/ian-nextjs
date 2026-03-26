@@ -5,6 +5,8 @@ import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { BlogIndexContent } from "@/components/public/BlogIndexContent";
 import "./page.css";
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export const metadata: Metadata = {
   title: "Blog",
   description:

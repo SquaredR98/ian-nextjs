@@ -22,3 +22,7 @@
 .testimonial-card-quote {
   @apply text-sm text-[var(--color-ian-muted)] leading-relaxed italic;
 }
+
+.testimonial-card-source {
+  @apply flex items-center gap-1.5 mt-3 text-xs text-gray-400;
+}

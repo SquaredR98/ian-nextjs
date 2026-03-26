@@ -1,71 +1,39 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { SITE } from "@/lib/utils/constants";
-import { MapPin, Mail, Phone } from "lucide-react";
-
-const PROVIDER_CARDS = [
-  {
-    title: "Medical Providers:",
-    text: "Get your business verified and listed to reach more customers and grow consistently. Sign up for multiple locations by adjusting your order quantity and listing the locations in the order notes.",
-    href: "/provider-sign-up",
-  },
-  {
-    title: "Attorney / Law Firm:",
-    text: "Lawyers are legal professionals who provide advice, represent clients, and handle legal matters. They specialize in various areas such as criminal law, civil litigation, corporate law, and more. Lawyers work in law firms, government agencies, and as solo practitioners.",
-    href: "/provider-sign-up",
-  },
-] as const;
+import { MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 
 export function ContactUsContent() {
   return (
     <div className="contact-page">
-      <div className="contact-layout">
-        <ContactLeftColumn />
-        <ContactRightColumn />
+      {/* Hero Banner */}
+      <div className="contact-hero">
+        <div className="contact-hero-inner">
+          <h1 className="contact-hero-title">Get in Touch</h1>
+          <p className="contact-hero-subtitle">
+            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+          </p>
+        </div>
       </div>
-    </div>
-  );
-}
 
-function ContactLeftColumn() {
-  return (
-    <div className="contact-left">
-      <span className="contact-label">Get in touch</span>
-      <h1 className="contact-heading">Connect with us</h1>
-      <p className="contact-description">
-        Please fill out the form below with your contact details and message.
-      </p>
-      <ContactForm />
-    </div>
-  );
-}
-
-function ContactRightColumn() {
-  return (
-    <div className="contact-right">
-      <ProviderCTA />
-      <ContactWays />
-    </div>
-  );
-}
-
-function ProviderCTA() {
-  return (
-    <div className="contact-provider-cta">
-      <h2 className="contact-provider-cta-title">
-        Become an I.A.N. provider Today
-      </h2>
-      <div className="contact-provider-cards">
-        {PROVIDER_CARDS.map((card) => (
-          <div key={card.title} className="contact-provider-card">
-            <p className="contact-provider-card-text">
-              <strong>{card.title}</strong> {card.text}
+      {/* Main Content */}
+      <div className="contact-content">
+        <div className="contact-layout">
+          {/* Left: Form */}
+          <div className="contact-left">
+            <span className="contact-label">Send us a message</span>
+            <p className="contact-description">
+              Fill out the form below with your details and we&apos;ll get back to you shortly.
             </p>
-            <Link href={card.href} className="contact-provider-card-btn shimmer">
-              SIGN UP
-            </Link>
+            <ContactForm />
           </div>
-        ))}
+
+          {/* Right: Info */}
+          <div className="contact-right">
+            <ContactWays />
+            <ProviderCTA />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -74,25 +42,55 @@ function ProviderCTA() {
 function ContactWays() {
   return (
     <div className="contact-ways">
-      <h3 className="contact-ways-title">Ways to connect with us</h3>
+      <h3 className="contact-ways-title">Ways to Connect</h3>
       <div className="contact-ways-list">
         <div className="contact-ways-item">
-          <MapPin className="contact-ways-icon" />
-          <span>{SITE.address}</span>
+          <div className="contact-ways-icon-wrap">
+            <MapPin className="contact-ways-icon" />
+          </div>
+          <div>
+            <p className="contact-ways-item-label">Address</p>
+            <span className="contact-ways-item-value">{SITE.address}</span>
+          </div>
         </div>
         <div className="contact-ways-item">
-          <Mail className="contact-ways-icon" />
-          <a href={`mailto:${SITE.email}`} className="contact-ways-link">
-            {SITE.email}
-          </a>
+          <div className="contact-ways-icon-wrap">
+            <Mail className="contact-ways-icon" />
+          </div>
+          <div>
+            <p className="contact-ways-item-label">Email</p>
+            <a href={`mailto:${SITE.email}`} className="contact-ways-link">
+              {SITE.email}
+            </a>
+          </div>
         </div>
         <div className="contact-ways-item">
-          <Phone className="contact-ways-icon" />
-          <a href={`tel:${SITE.phoneRaw}`} className="contact-ways-link">
-            {SITE.phone}
-          </a>
+          <div className="contact-ways-icon-wrap">
+            <Phone className="contact-ways-icon" />
+          </div>
+          <div>
+            <p className="contact-ways-item-label">Phone</p>
+            <a href={`tel:${SITE.phoneRaw}`} className="contact-ways-link">
+              {SITE.phone}
+            </a>
+          </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function ProviderCTA() {
+  return (
+    <div className="contact-provider-cta">
+      <h3 className="contact-provider-cta-title">Are you a Provider?</h3>
+      <p className="contact-provider-cta-text">
+        Get your business verified and listed to reach more customers. Sign up as a medical provider, attorney, or service provider today.
+      </p>
+      <Link href="/provider-sign-up" className="contact-provider-cta-btn shimmer">
+        Provider Sign Up
+        <ArrowRight className="w-4 h-4" />
+      </Link>
     </div>
   );
 }

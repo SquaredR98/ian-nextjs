@@ -2,9 +2,7 @@
 
 import type { ReactNode } from "react";
 import type { ProviderDetail, Provider } from "@/lib/types";
-import { useClickTracking } from "@/lib/hooks/useClickTracking";
 import { sanitizeHtml } from "@/lib/utils/sanitize";
-import { RatingStars } from "@/components/shared/RatingStars";
 import { GoogleReviews } from "@/components/shared/GoogleReviews";
 import { PhotoGallery } from "@/components/shared/PhotoGallery";
 import Link from "next/link";
@@ -62,33 +60,15 @@ function BecomeProviderCTA() {
   return (
     <div className="provider-sidebar-cta">
       <h4 className="provider-sidebar-cta-title">
-        Become an I.A.N. provider Today
+        Become an I.A.N. Provider Today
       </h4>
       <p className="provider-sidebar-cta-desc">
-        <strong>Medical Providers:</strong> Get your business verified and
-        listed to reach more customers and grow consistently. Sign up for
-        multiple locations by adjusting your order quantity and listing the
-        locations in the order notes.
+        Get your business verified and listed to reach more customers and grow
+        consistently. Whether you are a medical provider, attorney, or service
+        professional, I.A.N. connects you with people who need your help.
       </p>
-      <Link
-        href="/provider-sign-up"
-        className="provider-sidebar-cta-btn"
-      >
-        Sign Up
-      </Link>
-      <hr className="provider-sidebar-cta-divider" />
-      <p className="provider-sidebar-cta-desc">
-        <strong>Attorney / Law Firm:</strong> Lawyers are legal professionals
-        who provide advice, represent clients, and handle legal matters. They
-        specialize in various areas such as criminal law, civil litigation,
-        corporate law, and more. Lawyers work in law firms, government
-        agencies, and as solo practitioners.
-      </p>
-      <Link
-        href="/provider-sign-up"
-        className="provider-sidebar-cta-btn"
-      >
-        Sign Up
+      <Link href="/provider-sign-up" className="provider-sidebar-cta-btn">
+        Sign Up Now
       </Link>
     </div>
   );
@@ -102,8 +82,6 @@ export { ProviderSidebar };
 /* ------------------------------------------------------------------ */
 
 function ProviderAbout({ provider }: { provider: ProviderDetail }) {
-  const { trackClick } = useClickTracking();
-
   if (!provider.description) return null;
 
   return (
@@ -115,31 +93,6 @@ function ProviderAbout({ provider }: { provider: ProviderDetail }) {
           __html: sanitizeHtml(provider.description.replace(/\n/g, "<br/>")),
         }}
       />
-      <div className="provider-about-links">
-        {provider.website && (
-          <a
-            href={provider.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="provider-about-link"
-            onClick={() => trackClick("website", provider.id)}
-          >
-            {provider.website}
-          </a>
-        )}
-        {provider.phone && (
-          <a
-            href={`tel:${provider.phone}`}
-            className="provider-about-link"
-            onClick={() => trackClick("phone", provider.id)}
-          >
-            {provider.phone}
-          </a>
-        )}
-      </div>
-      <div className="provider-about-rating">
-        <RatingStars rating={provider.rating} count={provider.review_count} />
-      </div>
     </section>
   );
 }

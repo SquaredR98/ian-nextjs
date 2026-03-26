@@ -32,10 +32,10 @@ export function BlogIndexContent() {
   const posts = postsRes?.data ?? [];
   const categories = categoriesRes?.data ?? [];
 
-  // Show hero slider with first 3 posts on page 1 when no category filter
+  // Show hero slider with first 3 posts on page 1 (posts also appear in grid)
   const showHero = page === 1 && !category && posts.length > 0;
   const heroPosts = showHero ? posts.slice(0, 3) : [];
-  const gridPosts = showHero ? posts.slice(3) : posts;
+  const gridPosts = posts;
   const relatedPosts = posts.slice(0, 4);
 
   function handleCategoryChange(slug: string) {

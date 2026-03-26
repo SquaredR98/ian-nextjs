@@ -1,89 +1,146 @@
 @reference "tailwindcss";
 
 .contact-page {
-  @apply max-w-7xl mx-auto px-4 py-12;
+  @apply flex flex-col;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Hero Banner
+   ═══════════════════════════════════════════════════════════════════ */
+
+.contact-hero {
+  background: linear-gradient(rgba(30, 25, 92, 0.85), rgba(56, 13, 157, 0.75)),
+    url("/home/innerbanner.jpg") no-repeat center center;
+  background-size: cover;
+  @apply py-16 px-4;
+}
+
+.contact-hero-inner {
+  @apply max-w-3xl mx-auto text-center;
+}
+
+.contact-hero-title {
+  @apply text-3xl md:text-4xl font-bold text-white mb-3 leading-tight;
+}
+
+.contact-hero-subtitle {
+  @apply text-base md:text-lg text-white/85 leading-relaxed;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Main Content
+   ═══════════════════════════════════════════════════════════════════ */
+
+.contact-content {
+  @apply max-w-7xl mx-auto px-4 py-14 w-full;
 }
 
 .contact-layout {
-  @apply grid grid-cols-1 lg:grid-cols-[3fr_9fr] gap-12;
+  @apply grid grid-cols-1 lg:grid-cols-[7fr_5fr] gap-14;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Left column                                                        */
-/* ------------------------------------------------------------------ */
+/* ───────────────────────────────────────────────────────────────────
+   Left column — Form
+   ─────────────────────────────────────────────────────────────────── */
 
 .contact-left {
   @apply flex flex-col;
 }
 
 .contact-label {
-  @apply text-base font-semibold text-[var(--color-ian-dark)] mb-2;
-}
-
-.contact-heading {
-  @apply text-2xl font-bold text-[var(--color-ian-text)] mb-3;
+  @apply text-xl font-bold text-[var(--color-ian-text)] mb-2;
 }
 
 .contact-description {
   @apply text-base text-[var(--color-ian-muted)] mb-6 pb-6 border-b border-[var(--color-ian-border)];
 }
 
-/* ------------------------------------------------------------------ */
-/*  Right column                                                       */
-/* ------------------------------------------------------------------ */
+/* ───────────────────────────────────────────────────────────────────
+   Right column — Info
+   ─────────────────────────────────────────────────────────────────── */
 
 .contact-right {
   @apply flex flex-col gap-8;
 }
 
-.contact-provider-cta {
-  @apply p-0;
-}
-
-.contact-provider-cta-title {
-  @apply text-xl font-bold text-[var(--color-ian-text)] mb-6;
-}
-
-.contact-provider-cards {
-  @apply grid grid-cols-1 sm:grid-cols-2 gap-6;
-}
-
-.contact-provider-card {
-  @apply flex flex-col gap-4;
-}
-
-.contact-provider-card-text {
-  @apply text-base text-[var(--color-ian-muted)] leading-relaxed;
-}
-
-.contact-provider-card-btn {
-  @apply inline-flex items-center justify-center w-fit px-8 py-2.5 rounded-full bg-[var(--color-ian-dark)] text-white text-sm font-semibold tracking-wider hover:bg-[var(--color-ian-dark-hover)] transition-colors;
-}
-
-/* ------------------------------------------------------------------ */
-/*  Ways to connect                                                    */
-/* ------------------------------------------------------------------ */
-
+/* Ways to connect */
 .contact-ways {
-  @apply bg-[var(--color-ian-bg-light)] rounded-lg p-8;
+  @apply bg-[var(--color-ian-bg-light)] rounded-xl p-8;
 }
 
 .contact-ways-title {
-  @apply text-lg font-bold text-[var(--color-ian-text)] mb-5;
+  @apply text-lg font-bold text-[var(--color-ian-text)] mb-6;
 }
 
 .contact-ways-list {
-  @apply flex flex-col gap-5;
+  @apply flex flex-col gap-6;
 }
 
 .contact-ways-item {
-  @apply flex items-center gap-3 text-base text-[var(--color-ian-text)];
+  @apply flex items-start gap-4 text-base text-[var(--color-ian-text)];
+}
+
+.contact-ways-icon-wrap {
+  @apply w-10 h-10 rounded-full flex items-center justify-center shrink-0;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
 }
 
 .contact-ways-icon {
-  @apply w-5 h-5 text-[var(--color-ian-dark)] shrink-0;
+  @apply w-4.5 h-4.5 text-white;
+}
+
+.contact-ways-item-label {
+  @apply text-xs font-semibold uppercase tracking-wider text-[var(--color-ian-muted)] mb-0.5;
+}
+
+.contact-ways-item-value {
+  @apply text-sm text-[var(--color-ian-text)];
 }
 
 .contact-ways-link {
-  @apply text-[var(--color-ian-text)] hover:text-[var(--color-ian-dark)] transition-colors;
+  @apply text-sm text-[var(--color-ian-text)] hover:text-[var(--color-ian-dark)] transition-colors;
+}
+
+/* Provider CTA */
+.contact-provider-cta {
+  @apply bg-white border border-[var(--color-ian-border)] rounded-xl p-8;
+}
+
+.contact-provider-cta-title {
+  @apply text-lg font-bold text-[var(--color-ian-text)] mb-3;
+}
+
+.contact-provider-cta-text {
+  @apply text-sm text-[var(--color-ian-muted)] leading-relaxed mb-5;
+}
+
+.contact-provider-cta-btn {
+  @apply inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white no-underline transition-all duration-200;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
+}
+
+.contact-provider-cta-btn:hover {
+  @apply shadow-lg scale-[1.02];
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .contact-hero {
+    @apply py-12;
+  }
+
+  .contact-hero-title {
+    @apply text-2xl;
+  }
+
+  .contact-content {
+    @apply py-8;
+  }
+
+  .contact-layout {
+    @apply gap-8;
+  }
 }

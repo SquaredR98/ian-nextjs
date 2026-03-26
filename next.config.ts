@@ -22,15 +22,14 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    ...(isProd ? {} : { dangerouslyAllowLocalIP: true }),
+    dangerouslyAllowLocalIP: true,
     remotePatterns: [
-      // Localhost only needed in dev — harmless in prod (won't match remote requests)
-      ...(!isProd ? [{
-        protocol: "http" as const,
+      {
+        protocol: "http",
         hostname: "localhost",
         port: "5550",
         pathname: "/uploads/**",
-      }] : []),
+      },
       {
         protocol: "https",
         hostname: "api.injuryassistancenetwork.com",

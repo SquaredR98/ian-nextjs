@@ -1,45 +1,67 @@
 @reference "tailwindcss";
 
 .contact-form {
-  @apply flex flex-col gap-6;
+  @apply flex flex-col gap-7;
 }
 
 .contact-form-fields {
-  @apply flex flex-col gap-6;
+  @apply flex flex-col gap-5;
 }
 
 .contact-form-row {
-  @apply grid grid-cols-1 sm:grid-cols-2 gap-6;
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-5;
 }
 
 .contact-form-field {
-  @apply flex flex-col gap-1;
+  @apply flex flex-col gap-1.5;
 }
 
 .contact-form-label {
-  @apply text-base font-medium text-[var(--color-ian-text)];
+  @apply text-sm font-semibold text-[var(--color-ian-text)];
 }
 
-.contact-form-input {
-  @apply w-full px-3 py-2.5 text-base bg-[var(--color-ian-bg-light)] border-0 rounded text-[var(--color-ian-text)] focus:outline-none focus:ring-1 focus:ring-[var(--color-ian-primary)] transition-colors;
+.contact-form-input,
+.contact-form-select,
+.contact-form-textarea {
+  @apply w-full px-4 py-3 text-sm bg-white border border-[var(--color-ian-border)] rounded-lg text-[var(--color-ian-text)] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-ian-primary)]/30 focus:border-[var(--color-ian-primary)] transition-all duration-200;
+}
+
+.contact-form-input:hover,
+.contact-form-select:hover,
+.contact-form-textarea:hover {
+  @apply border-gray-400;
+}
+
+.contact-form-select {
+  @apply appearance-none cursor-pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5rem;
 }
 
 .contact-form-textarea {
-  @apply w-full px-3 py-2.5 text-base bg-[var(--color-ian-bg-light)] border-0 rounded text-[var(--color-ian-text)] focus:outline-none focus:ring-1 focus:ring-[var(--color-ian-primary)] resize-y min-h-[120px] transition-colors;
+  @apply resize-y min-h-[130px];
 }
 
 .contact-form-error {
-  @apply text-xs text-[var(--color-ian-danger)];
+  @apply text-xs text-[var(--color-ian-danger)] mt-0.5;
 }
 
 .contact-form-submit {
-  @apply w-fit px-8 py-2.5 text-sm font-semibold rounded bg-[var(--color-ian-dark)] text-white hover:bg-[var(--color-ian-dark-hover)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply w-full sm:w-auto px-10 py-3 text-sm font-semibold rounded-lg text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200;
+  background: linear-gradient(135deg, var(--color-ian-dark), #380d9d);
+}
+
+.contact-form-submit:hover:not(:disabled) {
+  @apply shadow-lg scale-[1.01];
 }
 
 .contact-form-success {
-  @apply text-base text-[var(--color-ian-success)] text-center mt-2;
+  @apply text-sm text-[var(--color-ian-success)] bg-green-50 border border-green-200 rounded-lg px-4 py-3 mt-1;
 }
 
 .contact-form-error-msg {
-  @apply text-base text-[var(--color-ian-danger)] text-center mt-2;
+  @apply text-sm text-[var(--color-ian-danger)] bg-red-50 border border-red-200 rounded-lg px-4 py-3 mt-1;
 }

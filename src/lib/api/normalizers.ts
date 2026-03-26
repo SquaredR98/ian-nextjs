@@ -486,6 +486,7 @@ export function normalizeTestimonial(raw: RawTestimonial): Testimonial {
 		text: raw.message || "",
 		photo_url: raw.profilePicture || "",
 		rating: raw.rating || 5,
+		source: (raw.source as "google" | "manual") || undefined,
 	};
 }
 

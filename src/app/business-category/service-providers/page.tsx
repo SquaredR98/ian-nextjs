@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Find trusted service providers for personal injury recovery including auto body shops, tow services, and more.",
 };
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export default async function ServiceProvidersPage() {
   const [specRes, faqRes] = await Promise.all([
     specialtiesApi.getGrouped("3"),

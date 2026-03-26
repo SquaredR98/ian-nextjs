@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Find trusted medical providers for personal injury treatment including chiropractors, orthopedic surgeons, and more.",
 };
 
+export const revalidate = 604800; // 7 days ISR — on-demand revalidation handles freshness
+
 export default async function MedicalProvidersPage() {
   const [specRes, faqRes] = await Promise.all([
     specialtiesApi.getGrouped("1"),
