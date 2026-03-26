@@ -51,7 +51,7 @@ export function ContactForm({ className }: ContactFormProps) {
         message: data.message,
       };
       if (data.phone) payload.phone = data.phone;
-      if (data.role && data.role !== "") payload.role = data.role;
+      if (data.role) payload.role = data.role;
       if (data.role === "provider" && data.category) payload.category = data.category;
       await contactApi.submit(payload as any);
       setStatus("success");
